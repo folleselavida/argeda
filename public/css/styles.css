@@ -1,0 +1,31 @@
+@import url('fonts/stylesheet.css'); /* import fonts */
+
+body {
+	margin: 0px !important;
+	font-family:"bebas_neue_regularregular";
+}
+
+#video {
+	overflow: hidden;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	-webkit-transition: background-color 1000ms linear;
+	-moz-transition: background-color 1000ms linear;
+	-o-transition: background-color 1000ms linear;
+	-ms-transition: background-color 1000ms linear;
+	transition: background-color 1000ms linear;
+	z-index:-100;
+}
+
+#logo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 70%; 
+	height: 70%;
+	margin-top: -20%; /* Half the height */
+    margin-left: -35%; /* Half the width */
+}

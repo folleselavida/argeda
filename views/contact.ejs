@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<title>Cannedhead</title>
+	<link rel="stylesheet" href="/css/styles.css">
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script type="text/javascript" src="/js/form.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+</head>
+<body>
+	<h1 class="hero">Contact us</h1>
+	<form id="contactForm" action="/contact" method="post" target="_blank">
+		
+			<p>
+				<label>Name</label><br>
+				<input type="text" name="user" placeholder="name">
+			</p>
+			<p>
+				<label>Email</label><br>
+				<input type="email" name="email" placeholder="email">
+			</p>
+			<p>
+				<label>Message</label><br>
+				<textarea name="message" placeholder="Write us here!"></textarea>
+			</p>	
+	    	<p>
+	    		<input type="submit" value="Send">
+	    	</p>
+		
+	</form>
+
+	<div id="social" style="display: none; background-color:black;">
+		<div class="grid_half">
+			<a href="#" target="_blank" onclick="">
+				<img id="fc" src="/img/logo.svg" alt="Facebook">
+			</a>
+		</div>		
+	</div>
+
+	<script type="text/javascript">
+
+	function showMessage(responseText,statusText,xhr,$form){
+
+		$(".hero").fadeOut("slow",function(){
+			$(this).text("Thanks. Want to tell anyone?");
+		}).fadeIn("slow");
+		
+		$("#contactForm").fadeOut("slow",function(){
+		   	$("#social").fadeIn("slow");
+		});
+	}
+
+	function resetForm(){
+		$('#contactForm')[0].reset();
+	}
+
+	$(document).ready(function(){
+
+		var options = {
+			clearForm:	true,
+			url:			"/contact",
+			// beforeSubmit:	showSubmit,			
+			success: resetForm
+		}
+
+		$('#contactForm').ajaxForm(options);
+	});	
+		
+	</script>
+</body>
+</html>
