@@ -12,8 +12,8 @@ exports.contactus = function(req, res) {
             var transport = nodemailer.createTransport("SMTP", {
                     service: 'Gmail', 
                     auth: {
-                        user: "jdavid@cannedhead.com",
-                        pass: "cannedhead#09"
+                        user: "----",
+                        pass: "---"
                     }
                 });
 
