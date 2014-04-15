@@ -10,6 +10,10 @@ app.get('/portfolio', function(req, res) {
 	res.render('portfolio'); 
 });
 
+app.get('*', function(req, res) {
+	res.render('404'); 
+});
+
 /*app.get('/contact', function(req, res) {
 	res.render('contact'); 
 });
