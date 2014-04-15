@@ -3,10 +3,10 @@ var mailer = require('./mailers/mailer');
 module.exports = function(app) {
 
 app.get('/', function(req, res) {
-	res.render('index'); 
+	res.render('portfolio'); 
 });
 
-app.get('/contact', function(req, res) {
+/*app.get('/contact', function(req, res) {
 	res.render('contact'); 
 });
 
@@ -18,6 +18,6 @@ app.post('/contact', mailer.contactus);
 
 app.get('*', function(req, res) {
 	res.render('404'); 
-});
+});*/
 
 }
