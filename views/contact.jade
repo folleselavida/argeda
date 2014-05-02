@@ -1,0 +1,54 @@
+doctype html
+html
+    head 
+        meta(charset="utf-8")
+        title Cannedhead
+        link(rel="stylesheet", href="/css/styles.css")  
+        link(rel="stylesheet", href="/css/bootstrap.css")  
+        script(type="text/javascript", src="/js/jquery.js")
+        script(type="text/javascript", src="/js/form.min.js")
+        script(type="text/javascript", src="/js/jquery-ui.min.js")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        .col-md-5.col-md-offset-7#contact
+            .form      
+                h2 Want to reach us?
+                p Let's work
+                form#contactForm(action="/contact", method="post")              
+                    p
+                        input(type="text", name="user", placeholder="name")             
+                    p
+                        input(type="email" name="email" placeholder="email")
+                    p                   
+                        textarea(name="message" placeholder='message')                  
+                    p.submit
+                        input(type="submit", value="Send")
+
+        script. 
+
+            function showMessage(responseText,statusText,xhr,$form){
+
+                $(".hero").fadeOut("slow",function(){
+                    $(this).text("Thanks. Want to tell anyone?");
+                }).fadeIn("slow");
+                
+                $("#contactForm").fadeOut("slow",function(){
+                    $("#social").fadeIn("slow");
+                });
+            }
+
+            function resetForm(){
+                $('#contactForm')[0].reset();
+            }
+
+            $(document).ready(function(){
+
+                var options = {
+                    clearForm:  true,
+                    url:            "/contact",
+                    // beforeSubmit:    showSubmit,         
+                    success: resetForm
+                }
+
+                $('#contactForm').ajaxForm(options);
+            }); 

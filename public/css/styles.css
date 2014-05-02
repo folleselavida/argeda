@@ -1,8 +1,5 @@
-@import url('fonts/stylesheet.css'); /* import fonts */
-
 body {
 	margin: 0px !important;
-	font-family:"bebas_neue_regularregular";
 }
 
 #video {
@@ -24,8 +21,63 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 50%; 
-	height: 50%;
-	margin-top: -20%; /* Half the height */
-    margin-left: -25%; /* Half the width */
+	width: 40%; 
+	height: 40%;
+	margin-top: -15%; /* Half the height */
+    margin-left: -20%; /* Half the width */
+}
+
+/*--------------- Contact ----------------- */
+#contact {
+    height: 100%;
+    border-left: 1px solid #000;
+}
+
+#contact .form {
+    overflow: auto !important;
+    float: left;
+    height: 100%;
+    padding-top: 85px;
+}
+
+#contact .form form {
+    width: 60%;
+    margin: 0px auto;
+    padding-top: 45px;
+    padding-bottom: 85px;
+}
+
+#contact h2 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#contact h2 + p {
+    margin-top: 6px;
+    font-size: 21px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#contact textarea, #contact textarea:hover, #contact textarea:focus, #contact input, #contact input:hover, #contact input:focus {
+    transition: transform 0.5s ease 0s, all 0.5s ease 0s;
+}
+
+#contact p.submit input {
+    width: auto;
+    height: auto;
+    padding: 10px 64px;
+    color: #A5A5A5;
+    border: 3px solid #A5A5A5;
+    background: none repeat scroll 0% 0% #FFF;
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: normal;
+}
+
+#contact p.submit input:hover, #contact p.submit input:focus {
+    color: #0066CC;
+    border-color: #0066CC;
 }

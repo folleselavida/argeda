@@ -1,11 +1,21 @@
 doctype html
 html
     head    
-        meta(charset="utf-8")
+        meta(charset="utf-8")        
+        meta(property="og:type" content="website")
+        meta(property="og:title" content="")
+        meta(property="og:image" content="")
+        meta(property="og:description" content="")
+        meta(property="og:url" content="http://www.cannedhead.com")
         title Cannedhead
+        meta(content="" name="author")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
         link(rel="stylesheet", href="/css/styles.css")
     body
+        <!-- BEGIN PRELOAD -->
+        <!-- END PRELOAD -->
         img#logo(src="./img/logo.svg")
         div#video
             video(preload="metadata",style="width: 100%; height: auto;", autoplay, loop) Your browser does not support the video tag.
-                source(src="http://www.lattrapereve.fr/wp-content/themes/attrapereve/vids/loop1.mp4",type="video/mp4")
+                source(src="video/intro.mp4",type="video/mp4")
+                source(src="video/intro.ogg",type="video/ogg")
