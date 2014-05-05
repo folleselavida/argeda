@@ -1,21 +1,96 @@
 doctype html
 html
-    head    
+    head
+
+        link( rel="stylesheet" href="/css/webfontkit/stylesheet.min.css" type="text/css")
+        link( rel="stylesheet" href="/css/normalize.min.css" type="text/css")
+        link( rel="stylesheet" href="/css/grid.min.css" type="text/css" )
+        link( rel="stylesheet" href="/css/style.min.css" type="text/css")
+        link( rel="stylesheet" href="/css/styles.css" type="text/css")    
+
+        script(type="text/javascript" src="/js/jquery.min.js")
+        script(type="text/javascript" src="/js/jquery-ui.min.js")
+        script(type="text/javascript" src="/js/form.min.js")
+        script(type="text/javascript" src="/js/wide-video.js")     
+    
         meta(charset="utf-8")        
         meta(property="og:type" content="website")
         meta(property="og:title" content="")
         meta(property="og:image" content="")
         meta(property="og:description" content="")
         meta(property="og:url" content="http://www.cannedhead.com")
-        title Cannedhead
         meta(content="" name="author")
         meta(content="width=device-width, initial-scale=1" name="viewport")
-        link(rel="stylesheet", href="/css/styles.css")
+        
+        title Cannedhead
+        
     body
-        <!-- BEGIN PRELOAD -->
-        <!-- END PRELOAD -->
-        img#logo(src="./img/logo.svg")
-        div#video
-            video(preload="metadata",style="width: 100%; height: auto;", autoplay, loop) Your browser does not support the video tag.
-                source(src="video/intro.mp4",type="video/mp4")
-                source(src="video/intro.ogg",type="video/ogg")
+        img#logo(src="./img/logo.svg") 
+        div#video 
+        div#images 
+
+        script.
+            // Remove no-script background image
+            document.body.style.backgroundImage = 'none';
+
+            // Avoid cropped background when the page has y-overflow
+            fixBackgroundHeight();
+
+            window.onresize = function()
+            {
+                var wh = $(window).height();
+                var ww = $(window).width();
+                var ratio = wh/ww;
+
+                // Avoid cropped background when the page has y-overflow
+                fixBackgroundHeight();
+
+                // Resize the background items
+                if(!mobileCheck())
+                {
+                    sizeVideoBg(ratio);
+                    sizeVideo(ratio);
+                }
+                else
+                {
+                    sizeImage(ratio);
+                }
+            };
+
+            // Load first video
+            loadMediaFirst();
+
+            // Waits till the page ends loading
+            $(window).bind('load', function()
+            {
+                // Avoid cropped background when the page has y-overflow
+                fixBackgroundHeight();
+
+                // Start to load the assets
+                loadMediaSecond();
+
+                setTimeout("first_slide_ocurred = true;", 4300);
+
+                setTimeout(function()
+                {
+                    if(first_video_loaded && second_video_loaded)
+                    {
+                        console.log('Enough bandwidth to load videos');
+                        enough_bw = true;
+                    }
+                    else
+                    {
+                        $('video').html('');
+                    }
+                }, 4600);
+
+                if(!mobileCheck())
+                {
+                    loopVideo();
+                }
+                else
+                {
+                    loopImage();
+                }
+            });
+
