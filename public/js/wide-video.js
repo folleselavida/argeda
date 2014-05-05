@@ -226,7 +226,7 @@ function videoHtml(video){
 	if(!($("#"+dataVideos[0].filename).hasClass("hidden"))||force){
 		$("#video").prepend('<div class="video-box" id="'+video.boxId+'" ><video class="transparent" id="'+video.filename+'" preload="metadata"></video></div>');
 		$("#"+video.filename).append('<source src="video/'+video.filename+'.mp4">');
-		$("#"+video.filename).append('<source src="video/'+video.filename+'.ogv">');
+		$("#"+video.filename).append('<source src="video/'+video.filename+'.ogg">');
 		$("#"+video.filename).append('<source src="video/'+video.filename+'.webm">');
 	}
 	else{
