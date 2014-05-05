@@ -16,19 +16,62 @@ html
         meta(charset="utf-8")        
         meta(property="og:type" content="website")
         meta(property="og:title" content="")
-        meta(property="og:image" content="")
         meta(property="og:description" content="")
         meta(property="og:url" content="http://www.cannedhead.com")
         meta(content="" name="author")
-        meta(content="width=device-width, initial-scale=1" name="viewport")
-        
+        meta(content="width=device-width, initial-scale=1" name="viewport")        
         title Cannedhead
+        link(rel="stylesheet", href="/css/styles.css")
+        script(type="text/javascript" src="js/jquery.scrollmagic.js")
         
     body
-        img#logo(src="./img/logo.svg") 
-        div#video 
-        div#images 
 
+        <!-- BEGIN PRELOAD -->
+        div#loader
+        img#loading(src="img/duplo_veci.gif")
+        <!-- END PRELOAD -->        
+        .home-view
+            img#logo(src="./img/logo.svg") 
+            div#video 
+            div#images 
+            img.home-bg(src="img/back.png")            
+            .grid_2#logo                      
+                object(data="img/logo.svg" type="image/svg+xml" class="logo") 
+                    <!--[if lte IE 8 ]-->
+                    img(src="img/logo.gif")
+                    <!--![endif]-->
+            .grid_4.home-content   
+                p.grid_12.hero hardware &#8226; software &bull; ideas
+                p.grid_12.home_text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+            object(data="img/scroll.svg" type="image/svg+xml" class="scroll") 
+                <!--[if lte IE 8 ]-->
+                img(src="img/scroll.gif")
+                <!--![endif]--> 
+            nav.grid_12#navbar
+                ul
+                    li
+                        a Home
+                    li
+                        a About us
+                    li
+                        a Services
+                    li
+                        a#cannedhead 
+                            img(src="img/cannedhead.svg")
+                    li
+                        a Portfolio
+                    li
+                        a Blog
+                    li
+                        a Contact us
+        .grid_12.white
+            p aca algo de texto
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+        script.
+            $(document).ready(function() {
+                $("#loader").fadeOut();
+                $("#loading").fadeOut();
+            });
         script.
             // Remove no-script background image
             document.body.style.backgroundImage = 'none';
@@ -93,4 +136,4 @@ html
                     loopImage();
                 }
             });
-
+        
