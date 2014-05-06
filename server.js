@@ -1,5 +1,9 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var app = express();
+
+//Load config files
+var config = require(__dirname + '/config/config.json');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -19,6 +23,15 @@ app.use(app.router);
 require('./routes')(app);
 
 
+app.listen(app.get('port'), function(){
+  console.log("Listening on port " + app.get('port'));
+});
 
-app.listen(app.get('port'));
-console.log('Listening on port 3000');
+//Initialize database: mongodb
+mongoose.connect(config.connection, function(err, res) {
+	if(err) {
+		console.log('ERROR: connecting to Database. ' + err);
+	} else {
+		console.log('Connected to Database');
+	}
+});

@@ -1,54 +1,43 @@
 var nodemailer = require('nodemailer');
 
-exports.contactus = function(req, res) {
+exports.contactus = function(name, email, message) {
 
-            var name = req.body.user;
-            var email = req.body.email;
-            var message = req.body.message;
-
-            console.log('POST /contact');
 
             // Create a SMTP transport object
             var transport = nodemailer.createTransport("SMTP", {
-                    service: 'Gmail', 
-                    auth: {
-                        user: "----",
-                        pass: "---"
-                    }
-                });
+
+                host: "smtp.mandrillapp.com", // hostname
+                port: 587, // port for secure SMTP
+                auth: {
+                    user: "app22836505@heroku.com",
+                    pass: "G1dcSBrkhCJIu8JDxIM1qA"
+                }
+
+            });
 
             console.log('SMTP Configured');
-
-            var path = require("path"),
-                ejs = require('ejs')
-              , fs = require('fs')
-              , str = fs.readFileSync(path.join(__dirname,'/email.ejs'), 'utf8'); 
-
-            var messageHtml = ejs.render(str, viewArgs);
 
             // Message object
             var message = {
 
                 // sender info
-                from: 'contact <contactus@cannedhead.com>',
+                from:' <contactus@cannedhead.com> ',
 
                 // Comma separated list of recipients
-                to: 'jdavid@cannedhead.com',
+                to: 'contact@cannedhead.com',
 
                 // Subject of the message
-                subject: 'contact us', //
+                subject: name+' '+email, //
 
                 headers: {
                     'X-Laziness-level': 1000
                 },
 
                 // HTML body
-                /*html:'Hello, someone wants to contact you, <br/>'+ 
+                html:'Hello, someone wants to contact you, <br/>'+ 
                      '<b>Name:</b> '+name+'<br/>'+
                      '<b>Email:</b> '+email+'<br/>'+
-                     '<b>Message:</b><br/>'+message,*/
-
-                html:messageHtml,        
+                     '<b>Message:</b><br/>'+message+'<br/>'       
             };
 
             console.log('Sending Mail');
