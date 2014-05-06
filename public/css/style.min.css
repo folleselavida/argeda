@@ -53,15 +53,6 @@ body,.video-box{
 	background-image:none!important
 }
 
-#VersionDetails{
-	position:fixed;
-	top:5px;
-	right:5px;
-	width:200px;
-	z-index:5;
-	color:white
-}
-
 input,select,textarea,button{
 	font-family:inherit;
 	font-size:.9em;

@@ -22,12 +22,7 @@ html
         meta(content="" name="author")
         meta(content="width=device-width, initial-scale=1" name="viewport")        
         title Cannedhead        
-    body
-
-        <!-- BEGIN PRELOAD -->
-        div#loader
-        img#loading(src="img/duplo_veci.gif")
-        <!-- END PRELOAD -->       
+    body     
         
         div#video(style="z-index:-3") 
         div#images(style="z-index:-3") 
@@ -77,11 +72,6 @@ html
 
               ga('create', 'UA-44994249-1', 'cannedhead.com');
               ga('send', 'pageview');
-
-            $(document).ready(function() {
-                $("#loader").fadeOut();
-                $("#loading").fadeOut();
-            });
 
             // Remove no-script background image
             document.body.style.backgroundImage = 'none';
