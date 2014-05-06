@@ -86,7 +86,9 @@ body {
     text-align:justify;
     font-size: 1em;
 }
-
+.left-panel{  
+    height: 100%;
+}
 .right-panel{  
     background-color: white;
     background: rgba(255, 255, 255, 0.15);
