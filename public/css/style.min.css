@@ -79,7 +79,6 @@ p,pre{
 }
 
 textarea,input[type='text'],input[type='email']{
-	border-color:transparent;
 	vertical-align:middle
 }
 
@@ -108,50 +107,6 @@ textarea,input[type='text'],input[type='email']{
 	transition:background-color 1000ms linear
 }
 
-#bubble,#ui-effects-wrapper,#bubbleShaker{
-	position:relative;
-	left:5%;
-	margin:3% 0 0;
-	display:none;
-	padding:7px 2px;
-	background:inherit;
-	border-color:blue;
-	font-size:.85em;
-	border-radius:3px;
-	width:10%;
-	-webkit-transition:background-color 1000ms linear;
-	-moz-transition:background-color 1000ms linear;
-	-o-transition:background-color 1000ms linear;
-	-ms-transition:background-color 1000ms linear;
-	transition:background-color 1000ms linear
-}
-
-#bubble:before{
-	content:"";
-	position:absolute;
-	top:8px;
-	left:-7px;
-	width:0;
-	height:0;
-	border-top:10px solid transparent;
-	border-bottom:10px solid transparent;
-	border-right:10px solid transparent;
-	border-right-color:inherit;
-	-webkit-transition:border-right-color 1000ms linear;
-	-moz-transition:border-right-color 1000ms linear;
-	-o-transition:border-right-color 1000ms linear;
-	-ms-transition:border-right-color 1000ms linear;
-	transition:border-right-color 1000ms linear
-}
-
-.registration{
-	z-index:2;
-	position:absolute;
-	left:38%;
-	top:25%;
-	width:26%;
-	text-align:center
-}
 
 #logo{
 	padding:0 auto;
@@ -170,40 +125,7 @@ textarea,input[type='text'],input[type='email']{
 	text-align:center
 }
 
-input.formField{
-	margin:2% 0;
-	padding:2%;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-	outline:0
-}
 
-#social{
-	display:none;
-	margin:0 auto;
-	height:25%
-}
-
-#tw{
-	padding:0 40% 0 0;
-	margin-left:0;
-	height:60px;
-	margin-top:-5px
-}
-
-#fc{
-	padding:0 0 0 40%;
-	margin-right:0;
-	height:50px
-}
-
-.grid_half{
-	width:50%;
-	margin:0;
-	float:left;
-	display:block
-}
 
 video.hidden{
 	opacity:0!important
@@ -333,9 +255,6 @@ video.transparent{
 		width:100%
 	}
 
-	#shaker,#bubble,.bubbleShaker{
-		display:none
-	}
 
 	#btn-form{
 		width:104%

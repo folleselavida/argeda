@@ -5,8 +5,11 @@ var first_slide_ocurred=false;
 var enough_bw=false;
 
 var dataVideos=[
-	{filename:"intro1",boxId:"slide1",color:"#353ff8",background:"#FFFFFF"},
-	{filename:"intro2",boxId:"slide2",color:"#D0AA00",background:"#FFFFFF"}		
+	{filename:"1",boxId:"slide1",color:"#353ff8",background:"#FFFFFF"},
+	{filename:"2",boxId:"slide2",color:"#D0AA00",background:"#FFFFFF"},		
+	{filename:"3",boxId:"slide3",color:"#D0AA00",background:"#FFFFFF"},	
+	{filename:"4",boxId:"slide4",color:"#D0AA00",background:"#FFFFFF"},		
+	{filename:"5",boxId:"slide5",color:"#D0AA00",background:"#FFFFFF"}		
 	];
 
 function correctImage(id){
@@ -121,7 +124,7 @@ function loopImage(){
 function loopVideo(){
 	count++;
 	for(var i=0;i<dataVideos.length;i++){
-		var delay=(i+1)*9000;setTimeout("videoSlide("+i+");",delay);
+		var delay=(i+1)*3200;setTimeout("videoSlide("+i+");",delay);
 	}
 }
 
@@ -226,7 +229,7 @@ function videoHtml(video){
 	if(!($("#"+dataVideos[0].filename).hasClass("hidden"))||force){
 		$("#video").prepend('<div class="video-box" id="'+video.boxId+'" ><video class="transparent" id="'+video.filename+'" preload="metadata"></video></div>');
 		$("#"+video.filename).append('<source src="video/'+video.filename+'.mp4">');
-		$("#"+video.filename).append('<source src="video/'+video.filename+'.ogg">');
+		$("#"+video.filename).append('<source src="video/'+video.filename+'.ogv">');
 		$("#"+video.filename).append('<source src="video/'+video.filename+'.webm">');
 	}
 	else{

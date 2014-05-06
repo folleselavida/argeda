@@ -64,6 +64,45 @@ body {
     margin-top: -45px;
     background: url('../img/duplo_veci.gif') no-repeat scroll 0% 0% / 90px 90px transparent;
 }
+
+/*-- Landing --*/
+
+.landing_logo{  
+    margin: 20% 0% 0 0%;
+}
+
+.landing_hero{
+    font-family: 'futurist_fixed-widthregular';
+    font-weight: bold;
+    text-transform:uppercase;
+    color:#fff;
+    text-align: center;
+    font-size: 0.892em;
+}
+
+.landing_text{
+    color: white;
+    margin:2% 0 7.5%;
+    text-align:justify;
+    font-size: 1em;
+}
+
+.right-panel{  
+    background-color: white;
+    background: rgba(255, 255, 255, 0.15);
+    height: 100%;
+}
+
+.letswork{
+    margin:15% 0 2%;
+}
+.textarea{
+    height:200px !important;
+}
+.boton{
+    font-family: 'futurist_fixed-widthregular';
+    background-color: #fff;
+}
 /*-- home-view --*/
 
 .home-view{
@@ -83,20 +122,6 @@ body {
 
 #logo{  
     margin: 2% 25%;
-}
-
-.sub-panel{  
-    margin: 10% 18%;
-}
-
-    #left-panel{  
-        height: 100%;
-    }
-
-#right-panel{  
-    background-color: white;
-    opacity:0.5;
-    height: 100%;
 }
 
 .home-content{
@@ -308,18 +333,40 @@ nav ul li ul li a {
 /* for little devices */
 @media (max-width: 1000px) {
 
-    .d-scroll{
+.d-scroll{
     display: block;    
     position: relative;
     cursor:pointer;
     top: 50%;
     left: 50%;
-    }   
+    margin-bottom: 20px;
+}   
+
+/* for little devices */
+@media (max-width: 992px) {
+
+.landing_logo{ 
+    margin: 0%;
+}
 
 
 }
+
+/* for little devices */
+@media (max-width: 360px) {
+
+.landing_hero{
+    font-family: 'futurist_fixed-widthregular';
+    font-weight: bold;
+    text-transform:uppercase;
+    color:#fff;
+    text-align: center;
+    font-size: 0.65em;
+}
+
+}
   
-  }
+  
 
 
 
