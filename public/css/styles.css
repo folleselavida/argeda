@@ -37,6 +37,7 @@
 body {
 	margin: 0px !important;
     font-family: 'utsaahregular';
+    height:100%;
 }
 
 /*-- Loader --*/
@@ -80,8 +81,22 @@ body {
     z-index:-100;
 }
 
-#logo{ 	
-    margin: 5% 41.67% 0;
+#logo{  
+    margin: 2% 25%;
+}
+
+.sub-panel{  
+    margin: 10% 18%;
+}
+
+    #left-panel{  
+        height: 100%;
+    }
+
+#right-panel{  
+    background-color: white;
+    opacity:0.5;
+    height: 100%;
 }
 
 .home-content{
@@ -96,22 +111,26 @@ body {
     color:#fff;
     text-align: center;
     font-size: 0.9em;
-    padding: 0;
 }
 
 .home_text{
     color: white;
     margin:2% 0 7.5%;
     text-align:justify;
+    font-size: 2em;
 }
 
 .scroll{
     position: relative;
-    top: 50%;
+    top: 2%;
     left: 50%;
     margin-left: -10.5px;
     margin-bottom: 8%;
     cursor:pointer;
+}
+
+.d-scroll{
+    display: none;
 }
 
 .white{
@@ -273,3 +292,36 @@ nav ul li ul li a {
 .grid_1{
     width:8.33%;
 }
+
+/* for little devices */
+@media (max-width: 1200px) {
+
+    .home_text{
+    color: white;
+    margin:2% 0 7.5%;
+    text-align:justify;
+    font-size: 1.5em;
+}
+  
+  }
+
+/* for little devices */
+@media (max-width: 1000px) {
+
+    .d-scroll{
+    display: block;    
+    position: relative;
+    cursor:pointer;
+    top: 50%;
+    left: 50%;
+    }   
+
+
+}
+  
+  }
+
+
+
+
+

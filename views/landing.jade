@@ -6,12 +6,14 @@ html
         link( rel="stylesheet" href="/css/normalize.min.css" type="text/css")
         link( rel="stylesheet" href="/css/grid.min.css" type="text/css" )
         link( rel="stylesheet" href="/css/style.min.css" type="text/css")
-        link( rel="stylesheet" href="/css/styles.css" type="text/css")    
+        link( rel="stylesheet" href="/css/styles.css" type="text/css")
+        link( rel="stylesheet" href="/css/bootstrap.css" type="text/css")    
 
         script(type="text/javascript" src="/js/jquery.min.js")
         script(type="text/javascript" src="/js/jquery-ui.min.js")
         script(type="text/javascript" src="/js/form.min.js")
-        script(type="text/javascript" src="/js/wide-video.js")     
+        script(type="text/javascript" src="/js/wide-video.js")
+        script(type="text/javascript" src="/js/bootstrap.min.js")     
     
         meta(charset="utf-8")        
         meta(property="og:type" content="website")
@@ -29,49 +31,48 @@ html
         <!-- BEGIN PRELOAD -->
         div#loader
         img#loading(src="img/duplo_veci.gif")
-        <!-- END PRELOAD -->        
-        .home-view
-            div#video(style="z-index:-3") 
-            div#images() 
-            img.home-bg(src="img/back.png")            
-            .grid_2#logo                      
-                object(data="img/logo.svg" type="image/svg+xml" class="logo") 
-                    <!--[if lte IE 8 ]-->
-                    img(src="img/logo.gif")
-                    <!--![endif]-->
-            .grid_4.home-content   
+        <!-- END PRELOAD -->       
+        
+        div#video(style="z-index:-3") 
+        div#images() 
+                        
+        .col-md-6#left-panel
+            .sub-panel
+                #logo
+                    object(data="img/logo.svg" type="image/svg+xml" class="logo") 
+                        <!--[if lte IE 8 ]-->
+                        img(src="img/logo.gif")
+                        <!--![endif]-->
+                
                 p.grid_12.hero hardware &#8226; software &bull; ideas
                 p.grid_12.home_text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
-            object(data="img/scroll.svg" type="image/svg+xml" class="scroll") 
-                <!--[if lte IE 8 ]-->
-                img(src="img/scroll.gif")
-                <!--![endif]--> 
-            nav.grid_12#navbar
-                ul
-                    li
-                        a Home
-                    li
-                        a About us
-                    li
-                        a Services
-                    li
-                        a#cannedhead 
-                            img(src="img/cannedhead.svg")
-                    li
-                        a Portfolio
-                    li
-                        a Blog
-                    li
-                        a Contact us
-        .grid_12.white
-            p aca algo de texto
-        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+        
+                object(data="img/scroll.svg" type="image/svg+xml" class="d-scroll")#d-scroll 
+                    <!--[if lte IE 8 ]-->
+                    img(src="img/scroll.gif")
+                    <!--![endif]--> 
+        
+        .col-md-6#right-panel
+            .sub-panel
+                .form      
+                h2 Want to reach us?
+                p Let's work
+                form#contactForm(action="/contact", method="post")              
+                    p
+                        input(type="text", name="user", placeholder="name")             
+                    p
+                        input(type="email" name="email" placeholder="email")
+                    p                   
+                        textarea(name="message" placeholder='message')                  
+                    p.submit
+                        input(type="submit", value="Send")    
+                
         script.
             $(document).ready(function() {
                 $("#loader").fadeOut();
                 $("#loading").fadeOut();
             });
-        script.
+
             // Remove no-script background image
             document.body.style.backgroundImage = 'none';
 
