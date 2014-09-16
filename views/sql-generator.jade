@@ -1,0 +1,264 @@
+doctype html
+html(lang='en')
+  head
+    title SQL GENERATOR
+    link(href='/css/bootstrap.css', rel='stylesheet')
+  body
+    .container-fluid
+        .col-md-8.col-md-offset-2
+            h1 Super code generator SQL by CannedHead
+            hr
+        .col-md-4
+            .form-horizontal
+                .form-group
+                    label.col-sm-2.control-label TABLE
+                    .col-sm-10
+                        input.form-control(type="text")#tablename
+                .form-group
+                    label.col-sm-2.control-label Host
+                    .col-sm-10
+                        input.form-control(type="text")#host
+                .form-group
+                    label.col-sm-2.control-label User
+                    .col-sm-10
+                        input.form-control(type="text")#user
+                .form-group
+                    label.col-sm-2.control-label Password
+                    .col-sm-10
+                        input.form-control(type="password")#password
+                .form-group
+                    label.col-sm-2.control-label Database
+                    .col-sm-10
+                        input.form-control(type="text")#database
+            .form-group
+                btn.btn.btn-lg.btn-block.btn-danger(type="submit" onclick="generate()") GENERAR LA H%#$**TA TABLA!
+        .col-md-8
+            .panel.panel-default
+                .panel-heading                    
+                    .btn-group
+                        button.btn.btn-default(type="button" onclick="showAddRow()") Agregar Campo
+                        button.btn.btn-default(type="button" onclick="deleteRow('dataTable')") Eliminar Campo 
+                        button.btn.btn-default(type="button" onclick="savePK('dataTable')") Select as PK
+                .panel-body(style="min-height:400px;")
+                    .table-responsive
+                        table#dataTable.table
+                            thead
+                                tr
+                                    th 
+                                    th Field
+                                    th Type
+                                    th Length/Value
+                                    th 
+                            tbody
+                                tr.hide#addForm
+                                    td
+                                        
+                                    td
+                                        input(type="text")#field
+                                    td
+                                        select#type
+                                            option(value="CHAR") CHAR(size)
+                                            option(value="VARCHAR") VARCHAR(size)
+                                            option(value="INT") INT(size)
+                                            option(value="DOUBLE") DOUBLE(size,d)
+                                            option(value="DATE()") DATE()
+                                            option(value="DATETIME()") DATETIME()
+                                    td
+                                        input(type="text")#length
+                                    td
+                                        button.btn.btn-default(type="button" onclick="addRow()") Agregar
+        .col-md-10.col-md-offset-1(style="margin-top:20px; margin-bottom:100px;")            
+            <!-- Nav tabs -->
+            ul.nav.nav-tabs(role="tablist")
+                li
+                    a(href="#table" role="tab" data-toggle="tab") TABLE
+                li
+                    a(href="#connection" role="tab" data-toggle="tab") CONNECTION
+                li
+                    a(href="#create" role="tab" data-toggle="tab") CREATE
+                li
+                    a(href="#read" role="tab" data-toggle="tab") READ
+                li
+                    a(href="#update" role="tab" data-toggle="tab") UPDATE
+                li
+                    a(href="#delete" role="tab" data-toggle="tab") DELETE
+            <!-- Tab panes -->
+            .tab-content
+              .tab-pane.active#table
+              .tab-pane#connection
+              .tab-pane#create
+              .tab-pane#read
+              .tab-pane#update
+              .tab-pane#delete 
+    footer.footer
+        .container
+            p.text-muted &copy; CannedHead 2014
+    <!-- jQuery  -->
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="http://code.jquery.com/ui/1.11.1/jquery-ui.js")
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    script(src="/js/bootstrap.min.js")
+    script(type="text/javascript").
+        $('#table a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#connection a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#create a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#read a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#update a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#delete a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        function showAddRow() {
+            $('#addForm').removeClass('hide');
+        }
+        function addRow() {
+            $('#dataTable tbody').append('<tr><td><input type="checkbox" class="checkbox_check" name="chk"/></td><td>'+$('#field').val()+'</td><td>'+$('#type').val()+'</td><td>'+$('#length').val()+'</td><td></td></tr>');
+            $('#addForm').addClass('hide');
+            $('#field').val('');
+            $('#length').val('');
+        } 
+        function deleteRow(tableID) {
+            try {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
+     
+                for(var i=0; i<rowCount; i++) {
+                    var row = table.rows[i];
+                    var chkbox = row.cells[0].childNodes[0];
+                    if(null != chkbox && true == chkbox.checked) {
+                        if(rowCount <= 1) {
+                            alert("Cannot delete all the rows.");
+                            break;
+                        }
+                        table.deleteRow(i);
+                        rowCount--;
+                        i--;
+                    }    
+                }
+            }catch(e) {
+                alert(e);
+            }
+        }
+
+        function savePK(tableID) {
+            try {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
+     
+                for(var i=0; i<rowCount; i++) {
+
+                    var row = table.rows[i];
+                    var chkbox = row.cells[0].childNodes[0];
+
+                    if(chkbox != null  && chkbox.checked == true ) {
+                        console.log('check:'+i);
+                        document.getElementById('dataTable').rows[i].cells[4].innerHTML="<span class='glyphicon glyphicon-star'></span>";    
+                    } else {
+                        console.log('uncheck:'+i);
+                        document.getElementById('dataTable').rows[i].cells[4].innerHTML=""; 
+                    }
+                }
+            }catch(e) {
+                alert(e);
+            }
+        }
+
+        function generateTable(){
+            var tablename = $('#tablename').val();
+            
+
+            var texto="<p>CREATE TABLE "+tablename+"</br>(</br>";
+            var table = document.getElementById("dataTable");
+                var rowCount = table.rows.length;     
+                for(var i=2; i<rowCount; i++) {
+                    var row = table.rows[i];
+                    if(row.cells[2].innerHTML=="CHAR" || row.cells[2].innerHTML=="VARCHAR" || row.cells[2].innerHTML=="INT"){
+                        texto=texto+"&nbsp;&nbsp;&nbsp;&nbsp;"+row.cells[1].innerHTML+" "+row.cells[2].innerHTML+"("+row.cells[3].innerHTML+")";
+                    } else {
+                        texto=texto+"&nbsp;&nbsp;&nbsp;&nbsp;"+row.cells[1].innerHTML+" "+row.cells[2].innerHTML;
+                    }
+
+                    if(i==rowCount-1){
+                         texto=texto+"</br>"
+                    } else {
+                        texto=texto+",</br>"
+                    }
+                    
+                }
+
+            texto=texto+")</p>";                                             
+            document.getElementById('table').innerHTML= texto;
+
+        }
+
+        function generateConnection() {
+            var host = $('#host').val();
+            var user = $('#user').val();
+            var password = $('#password').val();
+            var database = $('#database').val();
+
+            document.getElementById('connection').innerHTML="<p>var mysql = require('mysql');</br></br>var pool  = mysql.createPool({</br>"+
+                                                             "&nbsp;&nbsp;&nbsp;&nbsp;host:'"+host+"',</br>"+
+                                                             "&nbsp;&nbsp;&nbsp;&nbsp;user:'"+user+"',</br>"+
+                                                             "&nbsp;&nbsp;&nbsp;&nbsp;password:'"+password+"'</br>"+
+                                                             "&nbsp;&nbsp;&nbsp;&nbsp;database:'"+database+"'</br>});</p>";
+        }        
+       
+        function generateCreate(){
+            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tablename = $('#tablename').val();
+            
+
+            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
+            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "INSERT INTO '+tablename+' (';
+            var values ="";
+
+            var table = document.getElementById("dataTable");
+
+            var rowCount = table.rows.length;     
+            for(var i=2; i<rowCount; i++) {
+                var row = table.rows[i];
+                values=values+'"+connection.escape(req.body.'+row.cells[1].innerHTML+')+"';
+                query=query+row.cells[1].innerHTML;
+
+                if(i==rowCount-1){
+                    query=query+") VALUES (";
+                    values=values+");</br></br>";
+                    
+                } else {                  
+                    query=query+", ";
+                    values=values+", ";
+                }
+                
+            }
+
+            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
+                            tab+tab+tab+"if (err) return next(err);</br>"+
+                            tab+tab+tab+"connection.release();</br>"+
+                            tab+tab+tab+"res.next()</br>"+     
+                            tab+tab+"});</br>";
+            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
+            document.getElementById('create').innerHTML= texto;
+
+        }
+
+        function generate() {
+            generateTable();
+            generateConnection();
+            generateCreate();
+        }

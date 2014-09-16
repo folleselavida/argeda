@@ -47,11 +47,10 @@ app.get('/contact', function(req, res) {
 	res.render('contact'); 
 });
 
-
-
-app.get('*', function(req, res) {
-	res.render('404'); 
+app.get('/sql-generator', function(req, res) {
+	res.render('sql-generator'); 
 });
+
 
 
 

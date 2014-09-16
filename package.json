@@ -16,5 +16,9 @@
     "bcrypt":"*",
     "forever":"*",
     "nodemailer":""
+  },
+  "scripts": {
+   "start": "nodemon server.js",
+   "test": "node_modules/.bin/mocha -w"
   }
 }
