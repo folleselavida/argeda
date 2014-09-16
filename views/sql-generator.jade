@@ -6,7 +6,7 @@ html(lang='en')
   body
     .container-fluid
         .col-md-8.col-md-offset-2
-            h1 Super code generator SQL by CannedHead
+            h1 code generator MySQL
             hr
         .col-md-4
             .form-horizontal
@@ -31,13 +31,13 @@ html(lang='en')
                     .col-sm-10
                         input.form-control(type="text")#database
             .form-group
-                btn.btn.btn-lg.btn-block.btn-danger(type="submit" onclick="generate()") GENERAR LA H%#$**TA TABLA!
+                btn.btn.btn-lg.btn-block.btn-danger(type="submit" onclick="generate()") GENERAR TABLA
         .col-md-8
             .panel.panel-default
                 .panel-heading                    
                     .btn-group
-                        button.btn.btn-default(type="button" onclick="showAddRow()") Agregar Campo
-                        button.btn.btn-default(type="button" onclick="deleteRow('dataTable')") Eliminar Campo 
+                        button.btn.btn-default(type="button" onclick="showAddRow()") Add field
+                        button.btn.btn-default(type="button" onclick="deleteRow('dataTable')") Delete field 
                         button.btn.btn-default(type="button" onclick="savePK('dataTable')") Select as PK
                 .panel-body(style="min-height:400px;")
                     .table-responsive
@@ -250,15 +250,115 @@ html(lang='en')
             var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
                             tab+tab+tab+"if (err) return next(err);</br>"+
                             tab+tab+tab+"connection.release();</br>"+
-                            tab+tab+tab+"res.next()</br>"+     
+                            tab+tab+tab+"res.next();</br>"+     
                             tab+tab+"});</br>";
             texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
             document.getElementById('create').innerHTML= texto;
 
         }
 
+        function generateRead(){
+            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tablename = $('#tablename').val();
+            
+
+            var texto="<p>function(callback){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
+            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "SELECT * FROM '+tablename+' ;</br>';
+            var values ="";
+
+            var table = document.getElementById("dataTable");
+
+           
+
+            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
+                            tab+tab+tab+"if (err) return next(err);</br>"+
+                            tab+tab+tab+"connection.release();</br>"+
+                            tab+tab+tab+"callback(null,rows); </br>"+     
+                            tab+tab+"});</br>";
+            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
+            document.getElementById('read').innerHTML= texto;
+        }
+
+        function generateUpdate(){
+            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tablename = $('#tablename').val();
+            
+
+            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
+            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "UPDATE '+tablename+' (';
+            var values ="";
+
+            var table = document.getElementById("dataTable");
+
+            var rowCount = table.rows.length;     
+            for(var i=2; i<rowCount; i++) {
+                var row = table.rows[i];
+                values=values+'"+connection.escape(req.body.'+row.cells[1].innerHTML+')+"';
+                query=query+row.cells[1].innerHTML;
+
+                if(i==rowCount-1){
+                    query=query+") VALUES (";
+                    values=values+");</br></br>";
+                    
+                } else {                  
+                    query=query+", ";
+                    values=values+", ";
+                }
+                
+            }
+
+            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
+                            tab+tab+tab+"if (err) return next(err);</br>"+
+                            tab+tab+tab+"connection.release();</br>"+
+                            tab+tab+tab+"res.next();</br>"+     
+                            tab+tab+"});</br>";
+            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
+            document.getElementById('update').innerHTML= texto;
+
+        }
+
+        function generateDelete(){
+            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tablename = $('#tablename').val();
+            
+
+            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
+            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "DELETE FROM '+tablename+' (';
+            var values ="";
+
+            var table = document.getElementById("dataTable");
+
+            var rowCount = table.rows.length;     
+            for(var i=2; i<rowCount; i++) {
+                var row = table.rows[i];
+                values=values+row.cells[1].innerHTML+'"=req.body.'+row.cells[1].innerHTML+'+"';
+                query=query+row.cells[1].innerHTML;
+
+                if(i==rowCount-1){
+                    query=query+") WHERE ";
+                    values=values+");</br></br>";
+                    
+                } else {                  
+                    query=query+", ";
+                    values=values+", ";
+                }
+                
+            }
+
+            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
+                            tab+tab+tab+"if (err) return next(err);</br>"+
+                            tab+tab+tab+"connection.release();</br>"+
+                            tab+tab+tab+"res.next();</br>"+     
+                            tab+tab+"});</br>";
+            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
+            document.getElementById('delete').innerHTML= texto;
+
+        }
         function generate() {
             generateTable();
             generateConnection();
             generateCreate();
+            generateRead();
+            generateUpdate();
+            generateDelete();
         }
