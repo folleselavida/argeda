@@ -3,6 +3,26 @@ html(lang='en')
   head
     title SQL GENERATOR
     link(href='/css/bootstrap.css', rel='stylesheet')
+
+    link(rel="stylesheet" href="/lib/codemirror-4.5/lib/codemirror.css")
+    link(rel="stylesheet" href="/lib/codemirror-4.5/addon/fold/foldgutter.css")
+    link(rel="stylesheet" href="/lib/codemirror-4.5/addon/dialog/dialog.css")
+    link(rel="stylesheet" href="/lib/codemirror-4.5/theme/monokai.css")
+    script(src="/lib/codemirror-4.5/lib/codemirror.js")
+    script(src="/lib/codemirror-4.5/addon/search/searchcursor.js")
+    script(src="/lib/codemirror-4.5/addon/search/search.js")
+    script(src="/lib/codemirror-4.5/addon/dialog/dialog.js")
+    script(src="/lib/codemirror-4.5/addon/edit/matchbrackets.js")
+    script(src="/lib/codemirror-4.5/addon/edit/closebrackets.js")
+    script(src="/lib/codemirror-4.5/addon/comment/comment.js")
+    script(src="/lib/codemirror-4.5/addon/wrap/hardwrap.js")
+    script(src="/lib/codemirror-4.5/addon/fold/foldcode.js")
+    script(src="/lib/codemirror-4.5/addon/fold/brace-fold.js")
+    script(src="/lib/codemirror-4.5/mode/javascript/javascript.js")
+    script(src="./lib/codemirror-4.5/keymap/sublime.js")
+    style(type="text/css").
+      .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee; line-height: 1.3; height: 500px}
+      .CodeMirror-linenumbers { padding: 0 8px; }
   body
     .container-fluid
         .col-md-8.col-md-offset-2
@@ -84,12 +104,12 @@ html(lang='en')
                     a(href="#delete" role="tab" data-toggle="tab") DELETE
             <!-- Tab panes -->
             .tab-content
-              .tab-pane.active#table
-              .tab-pane#connection
-              .tab-pane#create
-              .tab-pane#read
-              .tab-pane#update
-              .tab-pane#delete 
+              article.tab-pane.active#table
+              article.tab-pane#connection
+              article.tab-pane#create
+              article.tab-pane#read
+              article.tab-pane#update
+              article.tab-pane#delete 
     footer.footer
         .container
             p.text-muted &copy; CannedHead 2014
@@ -182,27 +202,37 @@ html(lang='en')
             var tablename = $('#tablename').val();
             
 
-            var texto="<p>CREATE TABLE "+tablename+"</br>(</br>";
+            var texto="CREATE TABLE "+tablename+"\n(\n";
             var table = document.getElementById("dataTable");
                 var rowCount = table.rows.length;     
                 for(var i=2; i<rowCount; i++) {
                     var row = table.rows[i];
                     if(row.cells[2].innerHTML=="CHAR" || row.cells[2].innerHTML=="VARCHAR" || row.cells[2].innerHTML=="INT"){
-                        texto=texto+"&nbsp;&nbsp;&nbsp;&nbsp;"+row.cells[1].innerHTML+" "+row.cells[2].innerHTML+"("+row.cells[3].innerHTML+")";
+                        texto=texto+" "+row.cells[1].innerHTML+" "+row.cells[2].innerHTML+"("+row.cells[3].innerHTML+")";
                     } else {
-                        texto=texto+"&nbsp;&nbsp;&nbsp;&nbsp;"+row.cells[1].innerHTML+" "+row.cells[2].innerHTML;
+                        texto=texto+" "+row.cells[1].innerHTML+" "+row.cells[2].innerHTML;
                     }
 
                     if(i==rowCount-1){
-                         texto=texto+"</br>"
+                         texto=texto+"\n"
                     } else {
-                        texto=texto+",</br>"
+                        texto=texto+",\n"
                     }
                     
                 }
 
-            texto=texto+")</p>";                                             
-            document.getElementById('table').innerHTML= texto;
+            texto=texto+")";                                             
+            document.getElementById('table').innerHTML= "";
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[0], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });  
 
         }
 
@@ -212,20 +242,33 @@ html(lang='en')
             var password = $('#password').val();
             var database = $('#database').val();
 
-            document.getElementById('connection').innerHTML="<p>var mysql = require('mysql');</br></br>var pool  = mysql.createPool({</br>"+
-                                                             "&nbsp;&nbsp;&nbsp;&nbsp;host:'"+host+"',</br>"+
-                                                             "&nbsp;&nbsp;&nbsp;&nbsp;user:'"+user+"',</br>"+
-                                                             "&nbsp;&nbsp;&nbsp;&nbsp;password:'"+password+"'</br>"+
-                                                             "&nbsp;&nbsp;&nbsp;&nbsp;database:'"+database+"'</br>});</p>";
+            var texto = "var mysql = require('mysql');\n\n"+
+                        "var pool  = mysql.createPool({\n"+
+                        "  host:'"+host+"',\n"+
+                        "  user:'"+user+"',\n"+
+                        "  password:'"+password+"',\n"+
+                        "  database:'"+database+"'\n});";
+
+            document.getElementById('connection').innerHTML= "";
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[1], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });  
         }        
        
         function generateCreate(){
-            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tab="  ";
             var tablename = $('#tablename').val();
             
 
-            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
-            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "INSERT INTO '+tablename+' (';
+            var texto="create"+tablename+": function(req, res, next){\n pool.getConnection(function(err, connection) {\n";
+            var query =  '    var query =  "INSERT INTO '+tablename+' (';
             var values ="";
 
             var table = document.getElementById("dataTable");
@@ -238,7 +281,7 @@ html(lang='en')
 
                 if(i==rowCount-1){
                     query=query+") VALUES (";
-                    values=values+");</br></br>";
+                    values=values+');";\n\n';
                     
                 } else {                  
                     query=query+", ";
@@ -247,45 +290,67 @@ html(lang='en')
                 
             }
 
-            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
-                            tab+tab+tab+"if (err) return next(err);</br>"+
-                            tab+tab+tab+"connection.release();</br>"+
-                            tab+tab+tab+"res.next();</br>"+     
-                            tab+tab+"});</br>";
-            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
-            document.getElementById('create').innerHTML= texto;
+            var connection= tab+tab+"connection.query( query, function(err, rows) {\n"+
+                            tab+tab+tab+"if (err) return next(err);\n"+
+                            tab+tab+tab+"connection.release();\n"+
+                            tab+tab+tab+"res.next();\n"+     
+                            tab+tab+"});\n";
+            texto=texto+query+values+connection+" });\n}";                                             
+
+            document.getElementById('create').innerHTML= "";
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[2], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });  
 
         }
 
         function generateRead(){
-            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tab=" ";
             var tablename = $('#tablename').val();
             
 
-            var texto="<p>function(callback){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
-            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "SELECT * FROM '+tablename+' ;</br>';
+            var texto="read"+tablename+": function(callback){\n pool.getConnection(function(err, connection) {\n";
+            var query =  '  var query =  "SELECT * FROM '+tablename+' ;";\n';
             var values ="";
 
             var table = document.getElementById("dataTable");
 
            
 
-            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
-                            tab+tab+tab+"if (err) return next(err);</br>"+
-                            tab+tab+tab+"connection.release();</br>"+
-                            tab+tab+tab+"callback(null,rows); </br>"+     
-                            tab+tab+"});</br>";
-            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
-            document.getElementById('read').innerHTML= texto;
+            var connection= tab+tab+"connection.query( query, function(err, rows) {\n"+
+                            tab+tab+tab+"if (err) return next(err);\n"+
+                            tab+tab+tab+"connection.release();\n"+
+                            tab+tab+tab+"callback(null,rows); \n"+     
+                            tab+tab+"});\n";
+            texto=texto+query+values+connection+" });\n}";                                             
+
+            document.getElementById('read').innerHTML= "";
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[3], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });  
         }
 
         function generateUpdate(){
-            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tab=" ";
             var tablename = $('#tablename').val();
             
 
-            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
-            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "UPDATE '+tablename+' (';
+            var texto="update"+tablename+": function(req, res, next){\n pool.getConnection(function(err, connection) {\n";
+            var query =  '  var query =  "UPDATE '+tablename+' (';
             var values ="";
 
             var table = document.getElementById("dataTable");
@@ -298,7 +363,7 @@ html(lang='en')
 
                 if(i==rowCount-1){
                     query=query+") VALUES (";
-                    values=values+");</br></br>";
+                    values=values+');";\n\n';
                     
                 } else {                  
                     query=query+", ";
@@ -307,23 +372,35 @@ html(lang='en')
                 
             }
 
-            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
-                            tab+tab+tab+"if (err) return next(err);</br>"+
-                            tab+tab+tab+"connection.release();</br>"+
-                            tab+tab+tab+"res.next();</br>"+     
-                            tab+tab+"});</br>";
-            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
-            document.getElementById('update').innerHTML= texto;
+            var connection= tab+tab+"connection.query( query, function(err, rows) {\n"+
+                            tab+tab+tab+"if (err) return next(err);\n"+
+                            tab+tab+tab+"connection.release();\n"+
+                            tab+tab+tab+"res.next();\n"+     
+                            tab+tab+"});\n";
+            texto=texto+query+values+connection+" });\n}";                                             
+
+            document.getElementById('update').innerHTML= "";
+
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[4], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });  
 
         }
 
         function generateDelete(){
-            var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
+            var tab=" ";
             var tablename = $('#tablename').val();
             
 
-            var texto="<p>function(req, res, next){</br>&nbsp;&nbsp;&nbsp;&nbsp;pool.getConnection(function(err, connection) {</br>";
-            var query =  '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var query =  "DELETE FROM '+tablename+' (';
+            var texto="function(req, res, next){\n  pool.getConnection(function(err, connection) {\n";
+            var query =  '  var query =  "DELETE FROM '+tablename+' (';
             var values ="";
 
             var table = document.getElementById("dataTable");
@@ -336,7 +413,7 @@ html(lang='en')
 
                 if(i==rowCount-1){
                     query=query+") WHERE ";
-                    values=values+");</br></br>";
+                    values=values+");\n\n";
                     
                 } else {                  
                     query=query+", ";
@@ -345,15 +422,26 @@ html(lang='en')
                 
             }
 
-            var connection= tab+tab+"connection.query( query, function(err, rows) {</br>"+
-                            tab+tab+tab+"if (err) return next(err);</br>"+
-                            tab+tab+tab+"connection.release();</br>"+
-                            tab+tab+tab+"res.next();</br>"+     
-                            tab+tab+"});</br>";
-            texto=texto+query+values+connection+"&nbsp;&nbsp;&nbsp;&nbsp;});</br>}</p>";                                             
-            document.getElementById('delete').innerHTML= texto;
-
+            var connection= tab+tab+"connection.query( query, function(err, rows) {\n"+
+                            tab+tab+tab+"if (err) return next(err);\n"+
+                            tab+tab+tab+"connection.release();\n"+
+                            tab+tab+tab+"res.next();\n"+     
+                            tab+tab+"});\n";
+            texto=texto+query+values+connection+" });\n}";  
+            document.getElementById('delete').innerHTML= "";
+            var editor = CodeMirror(document.body.getElementsByTagName("article")[5], {
+                value: texto,
+                lineNumbers: true,
+                mode: "javascript",
+                keyMap: "sublime",
+                autoCloseBrackets: true,
+                matchBrackets: true,
+                showCursorWhenSelecting: true,
+                theme: "monokai"
+            });                                           
+            
         }
+
         function generate() {
             generateTable();
             generateConnection();
@@ -362,3 +450,5 @@ html(lang='en')
             generateUpdate();
             generateDelete();
         }
+
+   
