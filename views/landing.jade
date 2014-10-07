@@ -53,15 +53,14 @@ html
                     .form      
                     h2.landing_hero Any idea? Write us or just say Hello.
                     form(action="/landing", method="post")              
-                        p
+                        .form-group
                             input.form-control(type="text", name="user", placeholder="name" required)             
-                        p
+                        .form-group
                             input.form-control(type="email" name="email" placeholder="email" required)
                         .form-group                  
                             textarea.form-control.textarea(name="message" placeholder="message" required)
-                                
-                        p.submit
-                            input.col-md-4.col-md-offset-4.boton(type="submit", value="SEND")    
+            
+                        input.boton.btn-block.btn-lg(type="submit", value="SEND")    
         script(src="//www.google-analytics.com/analytics.js" async="")           
         script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

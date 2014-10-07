@@ -1,138 +1,67 @@
-doctype html
-html
-    head
-
-        link( rel="stylesheet" href="/css/webfontkit/stylesheet.min.css")
-        link( rel="stylesheet" href="/css/normalize.min.css" type="text/css")
-        link( rel="stylesheet" href="/css/grid.min.css" type="text/css" )
-        link( rel="stylesheet" href="/css/style.min.css" type="text/css")
-        link( rel="stylesheet" href="/css/styles.css" type="text/css")    
-
-        script(type="text/javascript" src="/js/jquery.min.js")
-        script(type="text/javascript" src="/js/jquery-ui.min.js")
-        script(type="text/javascript" src="/js/form.min.js")
-        script(type="text/javascript" src="/js/wide-video.js")     
-    
-        meta(charset="utf-8")        
-        meta(property="og:type" content="website")
-        meta(property="og:title" content="")
-        meta(property="og:description" content="")
-        meta(property="og:url" content="http://www.cannedhead.com")
-        meta(content="" name="author")
-        meta(content="width=device-width, initial-scale=1" name="viewport")        
-        title Cannedhead
-        link(rel="stylesheet", href="/css/styles.css")
-        script(type="text/javascript" src="js/jquery.scrollmagic.js")
+extend layout/layout
+block content    
+    section
+        <!-- Begin video and image background-->
+        #video-container
+            video.widthFix#video(autoplay loop poster="img/intro1.png")
+              source(src="/video/1.mp4" type="video/mp4")
+              source(src="/video/1.ogv" type="video/ogg")
+              source(src="/video/1.webm" type="video/webm")
+        <!-- End video background-->
+        .container
+          .col-md-4.col-md-offset-4
+              object(data="img/logo.svg" type="image/svg+xml") 
+                      <!--[if lte IE 8 ]-->
+                      img(src="img/logo.gif")
+                      <!--![endif]-->
+    section#screen2
+      .col-md-3
+        #concept-circle.chart
+      .col-md-3
+        #ui-ux-circle.chart
+      .col-md-3
+        #development-circle.chart
+      .col-md-3
+        #launch-support-circle.chart
+    section#screen3
         
-    body
+block scripts
+    script.
+      function sizeVideo(e){
+          if(typeof e=="undefined"){
+              e=getDocumentRatio()
+          }
+          if(e<9/16){
+              $("video").removeClass("heightFix").addClass("widthFix");
+              $("#image").removeClass("heightFix").addClass("widthFix")
+          } else {
+              $("video").removeClass("widthFix").addClass("heightFix");
+              $("#image").removeClass("widthFix").addClass("heightFix");
+          }
+      }
 
-        <!-- BEGIN PRELOAD -->
-        div#loader
-        img#loading(src="img/duplo_veci.gif")
-        <!-- END PRELOAD -->        
-        .home-view
-            div#video(style="z-index:-3") 
-            div#images() 
-            img.home-bg(src="img/back.png")            
-            .grid_2#logo                      
-                object(data="img/logo.svg" type="image/svg+xml" class="logo") 
-                    <!--[if lte IE 8 ]-->
-                    img(src="img/logo.gif")
-                    <!--![endif]-->
-            .grid_4.home-content   
-                p.grid_12.hero hardware &#8226; software &bull; ideas
-                p.grid_12.home_text Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
-            object(data="img/scroll.svg" type="image/svg+xml" class="scroll") 
-                <!--[if lte IE 8 ]-->
-                img(src="img/scroll.gif")
-                <!--![endif]--> 
-            nav.grid_12#navbar
-                ul
-                    li
-                        a Home
-                    li
-                        a About us
-                    li
-                        a Services
-                    li
-                        a#cannedhead 
-                            img(src="img/cannedhead.svg")
-                    li
-                        a Portfolio
-                    li
-                        a Blog
-                    li
-                        a Contact us
-        .grid_12.white
-            p aca algo de texto
-        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
-        script.
-            $(document).ready(function() {
-                $("#loader").fadeOut();
-                $("#loading").fadeOut();
-            });
-        script.
-            // Remove no-script background image
-            document.body.style.backgroundImage = 'none';
+      document.body.style.backgroundImage="none";
 
-            // Avoid cropped background when the page has y-overflow
-            fixBackgroundHeight();
+      var wh=$(window).height();
+      var ww=$(window).width();
+      var ratio=wh/ww;sizeVideo(ratio);
 
-            window.onresize = function()
-            {
-                var wh = $(window).height();
-                var ww = $(window).width();
-                var ratio = wh/ww;
+      window.onresize=function(){
+          var e=$(window).height();
+          var t=$(window).width();
+          var n=e/t;sizeVideo(n)
+      }  
 
-                // Avoid cropped background when the page has y-overflow
-                fixBackgroundHeight();
+      var  mn = $(".main-nav");
+          mns = "main-nav-scrolled";
+          hdr = $('header').height();
 
-                // Resize the background items
-                if(!mobileCheck())
-                {
-                    sizeVideoBg(ratio);
-                    sizeVideo(ratio);
-                }
-                else
-                {
-                    sizeImage(ratio);
-                }
-            };
-
-            // Load first video
-            loadMediaFirst();
-
-            // Waits till the page ends loading
-            $(window).bind('load', function()
-            {
-                // Avoid cropped background when the page has y-overflow
-                fixBackgroundHeight();
-
-                // Start to load the assets
-                loadMediaSecond();
-
-                setTimeout("first_slide_ocurred = true;", 4300);
-
-                setTimeout(function()
-                {
-                    if(first_video_loaded && second_video_loaded)
-                    {
-                        console.log('Enough bandwidth to load videos');
-                        enough_bw = true;
-                    }
-                    else
-                    {
-                        $('video').html('');
-                    }
-                }, 4600);
-
-                if(!mobileCheck())
-                {
-                    loopVideo();
-                }
-                else
-                {
-                    loopImage();
-                }
-            });
-        
+      $(window).scroll(function() {
+        if( $(this).scrollTop() > hdr ) {
+          mn.addClass(mns);
+        } else {
+          mn.removeClass(mns);
+        }
+      });  
+       
+    script(src="/js/donut.js")

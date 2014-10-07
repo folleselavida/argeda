@@ -399,7 +399,7 @@ html(lang='en')
             var tablename = $('#tablename').val();
             
 
-            var texto="function(req, res, next){\n  pool.getConnection(function(err, connection) {\n";
+            var texto="delete"+tablename+": function(req, res, next){\n  pool.getConnection(function(err, connection) {\n";
             var query =  '  var query =  "DELETE FROM '+tablename+' (';
             var values ="";
 

@@ -4,7 +4,7 @@ var User = require('./models/landing');
 module.exports = function(app) {
 
 app.get('/', function(req, res) {
-	res.render('landing'); 
+	res.render('index'); 
 });
 
 app.post('/landing',function(req, res) {
