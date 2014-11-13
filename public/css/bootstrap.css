@@ -239,7 +239,7 @@ th {
     background: #fff !important;
   }
   .navbar {
-    display: none;
+    display: block;
   }
   .table td,
   .table th {

@@ -1,31 +1,159 @@
 extend layout/layout
-block content    
-    section
-        <!-- Begin video and image background-->
-        #video-container
-            video.widthFix#video(autoplay loop poster="img/intro1.png")
-              source(src="/video/1.mp4" type="video/mp4")
-              source(src="/video/1.ogv" type="video/ogg")
-              source(src="/video/1.webm" type="video/webm")
-        <!-- End video background-->
-        .container
-          .col-md-4.col-md-offset-4
-              object(data="img/logo.svg" type="image/svg+xml") 
-                      <!--[if lte IE 8 ]-->
-                      img(src="img/logo.gif")
-                      <!--![endif]-->
+block content   
+
+    section#screen1
+      <!-- Begin video and image background-->
+      #video-container
+          video.widthFix#video(autoplay loop poster="img/intro1.png")
+            source(src="/video/1.mp4" type="video/mp4")
+            source(src="/video/1.ogv" type="video/ogg")
+            source(src="/video/1.webm" type="video/webm")
+      <!-- End video background-->
+         
+      .container
+        .col-xs-3.col-xs-offset-2.introCanned
+          img.logoIntro(src="img/logo.svg")
+        .col-xs-5.introText.introCanned
+          p Ayudamos a empresas a reinventar su negocio, forjando relaciones más valiosas y rentables con sus clientes pasados, presentes y futuros a través de la diferenciación competitiva en su
+          p(style="font-family: 'novasemibold';") EXPERIENCIA DIGITAL CON EL CLIENTE.
+          nav.cl-effect-2
+            a.smoothScroll(href="#screen2") 
+              span.porque(data-hover="POR QUE LO HACEMOS?")   POR QUE LO HACEMOS?
+
+    .menuCanned.full
+          ul.nav.navbar-nav.full#sticky
+              li
+                img.square.logo(src="img/logoChapa.svg")
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen1") INICIO
+              li.linkMenu
+                a ♦   
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen2") EL POR QUE
+               li.linkMenu
+                a ♦  
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen3") SERVICIOS
+              li.linkMenu
+                a ♦   
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen4") CLIENTES
+              li.linkMenu
+                a ♦
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen5") CONTACTO
     section#screen2
-      .col-md-3
-        #concept-circle.chart
-      .col-md-3
-        #ui-ux-circle.chart
-      .col-md-3
-        #development-circle.chart
-      .col-md-3
-        #launch-support-circle.chart
-    section#screen3
+
+      .imageService
+        .col-sm-10.col-sm-offset-1
+          h1.contTitle Enfocate menos en que bonito es tu producto y mas en que tan valiosa es la experiencia que le brindas a tu cliente. 
         
-block scripts
+        
+      .imageService2
+        .col-sm-12.why       
+
+          .col-sm-10.col-sm-offset-1
+            p.contText3 En un mundo donde los clientes son bombardeados con muchas opciones, se espera que las empresas provean experiencias atractivas y recompensen a sus clientes por su lealtad. Empresas que ignoran este hecho tenderán a no sobrevivir.
+
+
+          .col-sm-10.col-sm-offset-1
+            h1.contTitle3 Por qué lo Hacemos? 
+            p.contText3 "Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .
+
+          .col-sm-10.col-sm-offset-1
+            h1.contTitle3 Qué Hacemos?
+            p.contText3 Diseñamos, desarrollamos e implementamos estrategias personalizadas para implementar nuevas experiencias, interacciones y tecnologías robustas en las diferentes etapas del recorrido del cliente en tu empresa.
+
+          .col-sm-10.col-sm-offset-1
+            nav.cl-effect-2
+              a.smoothScroll(href="#screen3") 
+                span.porque(data-hover="Nuestros Servicios")   Nuestros Servicios
+
+          
+
+    section#screen3
+
+      .col-sm-4.column1
+        .col-sm-10.col-sm-offset-1.nServicios
+          h1.contTitle NUESTROS SERVICIOS
+        .col-sm-10.col-sm-offset-1
+            p.contText.forja Forjamos relaciones digitales entre empresas y clientes. 
+            p.contText4  LET'S WORK. 
+        .col-sm-10.col-sm-offset-1.idea
+          hr
+          h4.contTitle ALGUNA IDEA?
+          nav.cl-effect-20.cuenta.pull-left
+            a.smoothScroll(href="/#screen5")
+              span(data-hover="Cuentanos!")  Cuentanos!
+                
+      .grid.col-sm-4.column2
+          figure.effect-julia
+            .col-sm-12.iconoServicio
+              span.glyphicon.glyphicon-tower
+            img(src="img/service1.png")
+            figcaption.col-sm-12
+              h2 Estrategia y Analisis
+              div.col-sm-12
+                p.Sline Estrategia de marketing digital 
+                p.Sline Diagnostico/Diseno de la experiencia digital con tu cliente
+                
+
+      .grid.col-sm-4.column2
+          figure.effect-julia
+            .col-sm-12.iconoServicio
+              span.glyphicon.glyphicon-tower
+            img(src="img/service2.png")
+            figcaption.col-sm-12
+              h2 Desarrollo
+              div.col-sm-10
+                p.Sline Tecnologias web 
+                p.Sline Apps Moviles 
+                p.Sline Sistemas de gestion y CRM 
+            
+
+      .grid.col-sm-4.column2
+          figure.effect-julia
+            .col-sm-12.iconoServicio
+              span.glyphicon.glyphicon-bullhorn
+            img(src="img/service3.png")
+            figcaption.col-sm-12
+              h2 Social Media 
+              div.col-sm-10 
+                p.Sline Fidelizacion digital de tu cliente
+                p.Sline Construccion de  tu marca online
+              
+
+      .grid.col-sm-4.column2
+          figure.effect-julia
+            .col-sm-12.iconoServicio
+              span.glyphicon.glyphicon-heart
+            img(src="img/service4.png")
+            figcaption.col-sm-12
+              h2 Pasion
+              div.col-sm-10 
+                p.Sline.pasion AMAMOS 
+                p.Sline.pasion LO QUE
+                p.Sline.pasion HACEMOS! 
+
+    section#screen4
+
+       .col-sm-12.columnC1
+      
+
+    section#screen5
+    
+    script.
+      $(document).ready(function(){
+       $("#sticky").sticky({topSpacing:0});
+
+      });
+        
+
     script.
       function sizeVideo(e){
           if(typeof e=="undefined"){
@@ -63,5 +191,8 @@ block scripts
           mn.removeClass(mns);
         }
       });  
-       
-    script(src="/js/donut.js")
+
+    
+
+    
+  

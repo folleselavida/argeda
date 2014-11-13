@@ -14,33 +14,81 @@ html(lang="en")
 
     link(href="favicon.png" rel="shortcut icon" type="image/png")  
     link(href="/css/bootstrap.css", rel="stylesheet")
+    link(href="css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/style.css", rel="stylesheet")
-    link(rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css") 
-    
-  body
-    block content
-    nav.nav(role="navigation")
-      ul.nav.navbar-nav
-        li
-          a(href="#") Inicio
-        li
-          a(href="#") Nosotros
-        li
-          a(href="#") Servicios
-        li
-          a(href="#") Portafolio
-        li
-          a(href="#") Blog
-        li
-          a(href="#") Contactenos
-    include ../partials/_footer
+    link(href="/css/component.css", rel="stylesheet")
+    link(href="/css/set2.css", rel="stylesheet")
+
     <!-- jQuery & jQuery UI-->
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
-    script(src="http://code.jquery.com/ui/1.10.1/jquery-ui.js")
+    script(src="/js/jquery.sticky.js")
     <!-- Bootstrap JS -->
     script(src="/js/bootstrap.min.js")
     <!-- Other JS -->
-    block scripts
+    script(src="/js/scroll.js")
+    script(src="/js/jarallax-0.2.2.js")
+    script(src="/js/smoothscroll.js")
+    script(src="/js/modernizr.custom.js")
+     
+
+
+    script.
+      init = function() {
+        
+        var jarallax = new Jarallax(); 
+        jarallax.addAnimation('.apost',[{progress:'0%',top:'50%'},{progress: '100%',top: '0%'}]);                                    
+        
+      }
+
+ 
+
+    
+  body(onLoad='init()')
+    block content
+
+    footer.footer.footerCan
+      .container
+        .col-sm-12
+          a(href="#").squareArrow.pull-right.scrollup
+            img.arrow(src="img/arrow.svg")
+        .col-sm-12.footerCont     
+          .col-sm-4.col-sm-offset-1
+            img.col-md-7.pull-right(src="img/logo.svg" style="opacity:0.5;")
+          .col-sm-6
+            .col-md-12
+              .col-md-12.footerSocial
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social1.svg")
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social2.svg")
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social3.svg")
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social4.svg")
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social5.svg")
+                a.socialIcon(href="#")
+                  img.socialIcon2(src="img/social6.svg")
+            .col-md-12.footerTip
+              .col-md-12
+                p.nText RECIBE TIPS, RECURSOS Y NOTICIAS
+              .col-md-4
+                input.inputFooter(type="email" name="email" placeholder="Ingresa tu e-mail" required)
+              .col-md-4.col-md-offset-1
+                input.btnFooter(type="submit", value="SUSCRIBIRME") 
+
+
+
+        .col-sm-12.footerCopy(style='text-align:center; color:#fff;')        
+          p(style='opacity:0.2;').copyright &copy; 2014 CannedHead Todos los derechos reservados.
+
+  
+    
+
+
+      
+
+   
     
   
 

@@ -1,30 +1,237 @@
+@font-face {
+    font-family: 'sanserifficregular';
+    src: url('/css/fonts/sanseriffic-webfont.eot');
+    src: url('/css/fonts/sanseriffic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/sanseriffic-webfont.woff') format('woff'),
+         url('/css/fonts/sanseriffic-webfont.ttf') format('truetype'),
+         url('/css/fonts/sanseriffic-webfont.svg#sanserifficregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novablack';
+    src: url('/css/fonts/nova_alt_black-webfont.eot');
+    src: url('/css/fonts/nova_alt_black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_black-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_black-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_black-webfont.svg#novablack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'novabold';
+    src: url('/css/fonts/nova_alt_bold-webfont.eot');
+    src: url('/css/fonts/nova_alt_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_bold-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_bold-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_bold-webfont.svg#novabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novaextrabold';
+    src: url('/css/fonts/nova_alt_extrabold-webfont.eot');
+    src: url('/css/fonts/nova_alt_extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_extrabold-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_extrabold-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_extrabold-webfont.svg#novaextrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novalight';
+    src: url('/css/fonts/nova_alt_light-webfont.eot');
+    src: url('/css/fonts/nova_alt_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_light-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_light-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_light-webfont.svg#novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'novaregular';
+    src: url('/css/fonts/nova_alt_regular-webfont.eot');
+    src: url('/css/fonts/nova_alt_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_regular-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_regular-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_regular-webfont.svg#novaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'novasemibold';
+    src: url('/css/fonts/nova_alt_semibold-webfont.eot');
+    src: url('/css/fonts/nova_alt_semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_semibold-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_semibold-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_semibold-webfont.svg#novasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'novathin';
+    src: url('/css/fonts/nova_alt_thin-webfont.eot');
+    src: url('/css/fonts/nova_alt_thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/nova_alt_thin-webfont.woff') format('woff'),
+         url('/css/fonts/nova_alt_thin-webfont.ttf') format('truetype'),
+         url('/css/fonts/nova_alt_thin-webfont.svg#novathin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body,html{
   width:100%;
   height:100%;
   margin:0;
   padding:0;
-  overflow-x:hidden
+
 }
 
 /* Footer */
+
+.footerCan{
+
+  
+  background-color: #333;
+  border-top: solid 5px #D8D8DA; 
+  z-index: 50; 
+}
+
+.footerCont{
+margin-top: 3%; 
+}
+
+
+.footerCopy{
+  margin-top: 3%; 
+  font-size: 0.7em; 
+}
+
+.footerTip{
+  margin-top: 6%;
+
+}
+
+.footerSocial{
+  margin-top: 3%; 
+  
+}
+
+
+
+.squareArrow{
+  height: 35px; 
+  width: 35px; 
+  background-color: #D8D8DA; 
+  padding: 5px; 
+
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+  -moz-box-shadow:    0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+  box-shadow:         0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+}
+
+.arrow{
+  height: 25px; 
+  width: 25px; 
+  opacity: 0.5; 
+
+}
+
+.socialIcon{
+  height: 22px; 
+  width: 22px;
+  margin-right: 9.5%; 
+  opacity: 0.5; 
+}
+
+.socialIcon2{
+  height: 22px; 
+  width: 22px;
+  
+}
+
+.socialIcon:hover{
+  opacity: 1; 
+}
+
+.inputFooter{
+  padding: 10px !important;
+  border: none !important;
+  border-bottom: solid 2px #666161 !important;
+  transition: border 0.3s !important;
+  background-color: transparent;
+  color: #fff !important;
+  font-family: 'novaregular';  
+}
+
+
+.inputFooter:focus{
+   border-bottom: solid 2px #969696  
+}
+
+.btnFooter{
+  display: inline-block;
+  
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  background-color: transparent;
+  border: 4px solid #FFF;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-family: 'novabold'; 
+  color: #fff; 
+  letter-spacing: 2px;
+  opacity: 0.5; 
+}
+
+.btnFooter:hover{
+opacity: 1; 
+}
+
+.nText{
+  font-family: 'novaregular'; 
+  color: #4D4D4D;
+  font-size: 1.45em;
+  margin-bottom: 2%; 
+  letter-spacing: 0.5px; 
+
+}
+
 
 
 
 /* VIDEO */
 #video-container{
-  overflow:hidden;
+  
   position:fixed;
   height:100%;
   width:100%;
   top:0;
   left:0;
-  z-index:-10;
+  z-index:-100;
   margin:0;
-  padding:0
+  padding:0; 
+  background-color:#00B8F1;
 }
 
 #video {
-  z-index: -100;
+  z-index: -1000;
   overflow:hidden;
   position:fixed;
   height:100%;
@@ -67,91 +274,562 @@ video{
 }
 
 /*SECTION*/
-section {
-  height: 100%;
-}
 
 #screen1 {
-    background: none repeat scroll 0% 0% #43B29D;
+    background: none repeat scroll 0% 0% transparent;
+    height: 100%; 
+    
 }
 
 #screen2 {
-    background: none repeat scroll 0% 0% #D13638;
+    background: none repeat scroll 0% 0% #fff;
+    height: 100%; 
 }
 
+
 #screen3 {
-    background: none repeat scroll 0% 0% #E1793D;
+    background: none repeat scroll 0% 0% #FFF;
+    height: 100%; 
+    z-index: 2;
 }
+
+#screen4 {
+    background: none repeat scroll 0% 0% #D13638;
+    height: 100%; 
+    z-index: 2;
+}
+
+#screen5 {
+    background: none repeat scroll 0% 0% #7B7B7B;
+    height: 100%; 
+    z-index: 2;
+}
+section {
+  z-index: 80; 
+}
+
 
 /*INDEX*/
 
 @import url(//fonts.googleapis.com/css?family=Oswald:400);
 
-.chart {
-  position: relative;
-  width: 250px;
-  height: 250px;
-
+.full{
+  width: 100%;
+  height: auto; 
 }
-.doughnutTip {
-  position: absolute;
-  min-width: 30px;
-  max-width: 300px;
-  padding: 5px 15px;
-  border-radius: 1px;
-  background: rgba(0,0,0,.8);
-  color: #ddd;
-  font-size: 17px;
-  text-shadow: 0 1px 0 #000;
-  text-transform: uppercase;
+
+.menuCanned{
+  bottom:0px;
+  height: 90px; 
   text-align: center;
-  line-height: 1.3;
-  letter-spacing: .06em;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  pointer-events: none;
-
-  display: none;
+  float: left;
+  width: 100%; 
+  margin-top: -7.2%;
 }
-.doughnutTip:after {
-      position: absolute;
-      left: 50%;
-      bottom: -6px;
-      content: "";
-      height: 0;
-      margin: 0 0 0 -6px;
-      border-right: 5px solid transparent;
-      border-left: 5px solid transparent;
-      border-top: 6px solid rgba(0,0,0,.7);
-      line-height: 0;
 
-    display: none;
+#sticky{
+  -webkit-transform: translateZ(0);
 }
-.doughnutSummary {
-  position: absolute;
-  top: 50%;
+
+.menuCanned ul {
+  
+  }
+
+.menuCanned ul li{
+   
+
+} 
+
+.logoIntro{
+  height: 230px; 
+}
+
+.introCanned{
+margin-top: 23%; 
+}
+
+.introText{
+color: #FFF;
+font-family: "novaregular";
+padding: 10px;
+letter-spacing: 1px !important;
+font-size: 1.2em;
+text-align: left;
+opacity: 0.6 !important;
+
+}
+
+.porque{
+  font-family: "novasemibold";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menuCanned ul li a{
+  color:#fff;
+  font-family: "sanserifficregular";
+  letter-spacing: 7px;
+  font-size: 0.8em;
+  font-weight: 900; 
+ 
+}
+
+.menuCanned ul li a:hover{
+  color:#C4C4C4 !important;
+  background-color: transparent !important;
+  
+}
+
+.linkMenu{
+ margin-top: 20px !important; 
+}
+
+.square{
+  background-color: #fff; 
+  height:90px; 
+  width:auto;
+}
+
+.contWhat{
+  margin-top: 15%; 
+}
+
+.contIcon{
+  font-size: 4em; 
+  color: #fff; 
+  opacity: 0.8; 
+  margin-right: 10%; 
+}
+.contTitle{
+  font-family: 'novabold'; 
+  color: #fff; 
+}
+.contText{
+  font-family: 'novaregular'; 
+  color: #fff; 
+  font-size: 1.1em;
+}
+
+.contText3{
+  font-family: 'novaregular'; 
+  color: #333; 
+  font-size: 1.1em;
+}
+
+.contText4{
+  font-family: 'novabold'; 
+  color: #fff; 
+  font-size: 1.4em;
+}
+
+.forja{
+  margin-top: 5%; 
+  opacity: 0.7; 
+}
+
+
+.apost{
+ 
+  width: 960px; 
+  height: 700px; 
+  background-image: url('http://www.livingword.co.uk/wp-content/uploads/2013/08/apostrophes.png');
   left: 50%;
-  color: #d5d5d5;
+  top:100%;
+  margin-left: 0px; 
+  margin-top: 350px; 
+  z-index:-1; 
+  
+
+
+
+}
+
+.parall{
+width: 400px; 
+
+margin: 0 auto; 
+padding: 20px; 
+
+}
+
+
+#header {
+      background: #bada55;
+      color: white;
+      font-family: Droid Sans;
+      font-size: 18px;
+      line-height: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      width:100%;
+      box-sizing:border-box;
+    }
+
+/*INDEX servicios*/
+
+.imageService{
+  height: 100%; 
+  background-color: #333; 
+  width: 50%; 
+  float: left; 
+  background-image: url("../img/111H.jpg");
+  background-size: auto 100%; 
+  padding-top: 30%; 
+}
+
+.imageService2{
+  height: 100%; 
+  width: 50%; 
+  float: left; 
+ 
+}
+
+.why{
+  margin-top: 20%; 
+}
+
+.column1{
+
+  height: 100%; 
+  background-color: #333;
+  z-index: 3; 
+  -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+-moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+
+}
+
+.columnC1{
+
+  height: 50%; 
+  background-color: #fff;
+  z-index: 3; 
+  -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+-moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+
+}
+
+.column2{
+
+height: 50%;
+background-color: #FFF;
+float: left !important;
+padding-left: 0px !important; 
+padding-right: 0px !important;
+z-index: 2; 
+-webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+-moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+
+}
+
+.column3{
+
+height: 50%;
+background-color: #FFF;
+float: left !important;
+padding-left: 0px !important; 
+padding-right: 0px !important;
+
+
+}
+
+.column2:hover{
+  background-color: #E8E8E8;
+}
+.nServicios{
+  margin-top: 25%; 
+}
+
+.cuenta{
+letter-spacing: 1px;
+font-family: "novabold" !important;
+text-align: center !important;
+}
+
+.idea{
+  margin-top: 40%; 
+}
+
+.contTitle2{
+  font-family: 'novaregular'; 
+  color: #fff; 
+}
+
+.contTitle3{
+  font-family: 'novabold'; 
+  color: #333; 
+}
+
+
+.iconoServicio{
+  z-index: 4; 
+  position: absolute;
+  font-size: 6em; 
+  margin-top: 33%;
   text-align: center;
-  text-shadow: 0 -1px 0 #111;
-  cursor: default;
+  color: #fff;
+  opacity: 0.8;
+ 
 }
-.doughnutSummaryTitle {
-  position: absolute;
-  top: 50%;
+
+.iconoServicio span{
+   transition: opacity 2.95s ;
+ -moz-transition: opacity 2.95s ;
+ -webkit-transition: opacity 2.95s ;
+}
+
+
+
+
+.grid {
+  position: relative;
+  max-width: 1000px;
+  list-style: none;
+  text-align: center;
+}
+
+/* Common style */
+.grid figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
   width: 100%;
-  margin-top: -25%;
-  font-size: 18px;
-  letter-spacing: .06em;
+  height: 100%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
 }
-.doughnutSummaryNumber {
+
+.grid figure img {
+  position: relative;
+  display: block;
+  opacity: 0.8;
+  height: 110% !important;
+}
+
+.grid figure figcaption {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+  pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
   position: absolute;
-  top: 50%;
+  top: 50%; 
   width: 100%;
-  margin-top: -15%;
-  font-size: 55px;
-  display: none;
+  height: 100%;
 }
-.chart path:hover { opacity: .65; }
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+
+.grid figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+
+.grid figure h2 span {
+  font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+  margin-left: 8%; 
+}
+
+.grid figure p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/***** Julia *****/
+/*---------------*/
+
+figure.effect-julia {
+  background: #2f3238;
+}
+
+figure.effect-julia img {
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, transform 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+figure.effect-julia figcaption {
+  text-align: left;
+}
+
+figure.effect-julia h2 {
+ 
+  font-size: 153%;
+  opacity: 0;
+  font-family: 'novalight';
+  letter-spacing:2px; 
+}
+
+figure.effect-julia p {
+
+  display: inline-block;
+  margin: 0 0 0.25em;
+  padding: 0.4em 1em;
+  background: rgba(255,255,255,0.8);
+  color: #2f3238;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 75%;
+  margin-left: 6%;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-550px,0,0);
+  transform: translate3d(-550px,0,0);
+}
+
+.pasion{
+
+  display: inline-block;
+  margin: -26px 0px -40px 6% !important;
+  padding: 0.4em 1em;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: 'novabold'; 
+  text-transform: none;
+  font-size: 2em !important;
+  margin-left: 6%;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-360px,0,0);
+  transform: translate3d(-360px,0,0);
+
+}
+
+
+
+figure.effect-julia p:first-child {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+}
+
+figure.effect-julia p:nth-of-type(2) {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+figure.effect-julia p:nth-of-type(3) {
+  -webkit-transition-delay: 0.05s;
+  transition-delay: 0.05s;
+}
+
+figure.effect-julia:hover p:first-child {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+figure.effect-julia:hover p:nth-of-type(2) {
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+figure.effect-julia:hover p:nth-of-type(3) {
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+figure.effect-julia:hover p:nth-of-type(4) {
+  -webkit-transition-delay: 2s;
+  transition-delay: 2s;
+}
+
+figure.effect-julia:hover img {
+  opacity: 0.4;
+  -webkit-transform: scale3d(1.1,1.1,1);
+  transform: scale3d(1.1,1.1,1);
+}
+
+figure.effect-julia:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+
+figure.effect-julia:hover h2 {
+  opacity: 0.8; 
+
+  transition: opacity .45s ease-in-out;
+   -moz-transition: opacity .45s ease-in-out;
+   -webkit-transition: opacity .45s ease-in-out; 
+   
+}
+
+figure.effect-julia:hover span {
+
+  opacity: 0; 
+ transition: opacity .55s ease-in-out;
+ -moz-transition: opacity .55s ease-in-out;
+ -webkit-transition: opacity .55s ease-in-out;
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width :1024px){
   #video-container{
@@ -165,6 +843,10 @@ section {
     display:none
   }
 }
+
+
+
+
 
 
 
