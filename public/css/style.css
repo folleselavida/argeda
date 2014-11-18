@@ -89,7 +89,6 @@
     font-style: normal;
 }
 
-
 body,html{
   width:100%;
   height:100%;
@@ -98,127 +97,32 @@ body,html{
 
 }
 
-/* Footer */
-
-.footerCan{
-
-  
-  background-color: #333;
-  border-top: solid 5px #D8D8DA; 
-  z-index: 50; 
-}
-
-.footerCont{
-margin-top: 3%; 
-}
-
-
-.footerCopy{
-  margin-top: 3%; 
-  font-size: 0.7em; 
-}
-
-.footerTip{
-  margin-top: 6%;
-
-}
-
-.footerSocial{
-  margin-top: 3%; 
-  
-}
-
-
-
-.squareArrow{
-  height: 35px; 
-  width: 35px; 
-  background-color: #D8D8DA; 
-  padding: 5px; 
-
-  -webkit-box-shadow: 0px 3px 7px 0px rgba(49, 50, 50, 0.43);
-  -moz-box-shadow:    0px 3px 7px 0px rgba(49, 50, 50, 0.43);
-  box-shadow:         0px 3px 7px 0px rgba(49, 50, 50, 0.43);
-}
-
-.arrow{
-  height: 25px; 
-  width: 25px; 
-  opacity: 0.5; 
-
-}
-
-.socialIcon{
-  height: 22px; 
-  width: 22px;
-  margin-right: 9.5%; 
-  opacity: 0.5; 
-}
-
-.socialIcon2{
-  height: 22px; 
-  width: 22px;
-  
-}
-
-.socialIcon:hover{
-  opacity: 1; 
-}
-
-.inputFooter{
-  padding: 10px !important;
-  border: none !important;
-  border-bottom: solid 2px #666161 !important;
-  transition: border 0.3s !important;
-  background-color: transparent;
-  color: #fff !important;
-  font-family: 'novaregular';  
-}
-
-
-.inputFooter:focus{
-   border-bottom: solid 2px #969696  
-}
-
-.btnFooter{
-  display: inline-block;
-  
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  background-color: transparent;
-  border: 4px solid #FFF;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  font-family: 'novabold'; 
-  color: #fff; 
-  letter-spacing: 2px;
-  opacity: 0.5; 
-}
-
-.btnFooter:hover{
-opacity: 1; 
-}
-
-.nText{
-  font-family: 'novaregular'; 
-  color: #4D4D4D;
-  font-size: 1.45em;
-  margin-bottom: 2%; 
-  letter-spacing: 0.5px; 
-
-}
+#header {
+      background: #bada55;
+      color: white;
+      font-family: Droid Sans;
+      font-size: 18px;
+      line-height: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      width:100%;
+      box-sizing:border-box;
+    }
 
 
 
 
-/* VIDEO */
+
+
+
+
+
+/*--------------------------  BEGIN Video -----------------------------*/
+
+
 #video-container{
-  
   position:fixed;
   height:100%;
   width:100%;
@@ -272,20 +176,24 @@ video{
   display:none;height:100%;
   width:auto;overflow:hidden
 }
+/*--------------------------  END Video -----------------------------*/
 
-/*SECTION*/
+
+
+
+/*--------------------------  BEGIN Section-----------------------------*/
+
+
 
 #screen1 {
     background: none repeat scroll 0% 0% transparent;
-    height: 100%; 
-    
+    height: 100%;    
 }
 
 #screen2 {
     background: none repeat scroll 0% 0% #fff;
     height: 100%; 
 }
-
 
 #screen3 {
     background: none repeat scroll 0% 0% #FFF;
@@ -304,19 +212,26 @@ video{
     height: 100%; 
     z-index: 2;
 }
+
+#screen6{
+    background: none repeat scroll 0% 0% #333;
+    height: 15%; 
+    z-index: 2;
+}
+
 section {
   z-index: 80; 
 }
 
+/*--------------------------  END Section -----------------------------*/
 
-/*INDEX*/
 
-@import url(//fonts.googleapis.com/css?family=Oswald:400);
 
-.full{
-  width: 100%;
-  height: auto; 
-}
+
+
+
+
+/*--------------------------  BEGIN menu -----------------------------*/
 
 .menuCanned{
   bottom:0px;
@@ -331,14 +246,51 @@ section {
   -webkit-transform: translateZ(0);
 }
 
-.menuCanned ul {
-  
-  }
+.menuCanned ul li a{
+  color:#fff;
+  font-family: "sanserifficregular";
+  letter-spacing: 7px;
+  font-size: 0.8em;
+  font-weight: 900; 
+}
 
-.menuCanned ul li{
-   
+.menuCanned ul li a:hover{
+  color:#C4C4C4 !important;
+  background-color: transparent !important;
+}
 
-} 
+.linkMenu{
+ margin-top: 20px !important; 
+}
+
+.square{
+  background-color: #fff; 
+  height:90px; 
+  width:auto;
+}
+
+
+
+/*--------------------------  END menu -----------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*--------------------------  BEGIN Section#1 home -----------------------------*/
+
+
+@import url(//fonts.googleapis.com/css?family=Oswald:400);
+
+.full{
+  width: 100%;
+  height: auto; 
+}
 
 .logoIntro{
   height: 230px; 
@@ -359,71 +311,24 @@ opacity: 0.6 !important;
 
 }
 
+/*--------------------------  END Section#1 home -----------------------------*/
+
+
+
+
+/*--------------------------  BEGIN Section#2 WHY -----------------------------*/
+
+.why{
+  margin-top: 20%; 
+}
+
 .porque{
   font-family: "novasemibold";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.menuCanned ul li a{
-  color:#fff;
-  font-family: "sanserifficregular";
-  letter-spacing: 7px;
-  font-size: 0.8em;
-  font-weight: 900; 
- 
-}
-
-.menuCanned ul li a:hover{
-  color:#C4C4C4 !important;
-  background-color: transparent !important;
-  
-}
-
-.linkMenu{
- margin-top: 20px !important; 
-}
-
-.square{
-  background-color: #fff; 
-  height:90px; 
-  width:auto;
-}
-
-.contWhat{
-  margin-top: 15%; 
-}
-
-.contIcon{
-  font-size: 4em; 
-  color: #fff; 
-  opacity: 0.8; 
-  margin-right: 10%; 
-}
 .contTitle{
   font-family: 'novabold'; 
   color: #fff; 
-}
-.contText{
-  font-family: 'novaregular'; 
-  color: #fff; 
-  font-size: 1.1em;
 }
 
 .contText3{
@@ -431,59 +336,6 @@ opacity: 0.6 !important;
   color: #333; 
   font-size: 1.1em;
 }
-
-.contText4{
-  font-family: 'novabold'; 
-  color: #fff; 
-  font-size: 1.4em;
-}
-
-.forja{
-  margin-top: 5%; 
-  opacity: 0.7; 
-}
-
-
-.apost{
- 
-  width: 960px; 
-  height: 700px; 
-  background-image: url('http://www.livingword.co.uk/wp-content/uploads/2013/08/apostrophes.png');
-  left: 50%;
-  top:100%;
-  margin-left: 0px; 
-  margin-top: 350px; 
-  z-index:-1; 
-  
-
-
-
-}
-
-.parall{
-width: 400px; 
-
-margin: 0 auto; 
-padding: 20px; 
-
-}
-
-
-#header {
-      background: #bada55;
-      color: white;
-      font-family: Droid Sans;
-      font-size: 18px;
-      line-height: 1.6em;
-      font-weight: bold;
-      text-align: center;
-      padding: 10px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.2);
-      width:100%;
-      box-sizing:border-box;
-    }
-
-/*INDEX servicios*/
 
 .imageService{
   height: 100%; 
@@ -502,62 +354,61 @@ padding: 20px;
  
 }
 
-.why{
-  margin-top: 20%; 
+.contTitle3{
+  font-family: 'novabold'; 
+  color: #333; 
 }
 
-.column1{
 
+/*--------------------------  END Section#2 WHY -----------------------------*/
+
+
+
+
+
+/*--------------------------  BEGIN Section#3 Services -----------------------------*/
+
+.column1{
   height: 100%; 
   background-color: #333;
   z-index: 3; 
   -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
--moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-
-}
-
-.columnC1{
-
-  height: 50%; 
-  background-color: #fff;
-  z-index: 3; 
-  -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
--moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-
+  -moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+  box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
 }
 
 .column2{
-
-height: 50%;
-background-color: #FFF;
-float: left !important;
-padding-left: 0px !important; 
-padding-right: 0px !important;
-z-index: 2; 
--webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
--moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
-
-}
-
-.column3{
-
-height: 50%;
-background-color: #FFF;
-float: left !important;
-padding-left: 0px !important; 
-padding-right: 0px !important;
-
-
+  height: 50%;
+  background-color: #FFF;
+  float: left !important;
+  padding-left: 0px !important; 
+  padding-right: 0px !important;
+  z-index: 2; 
+  -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+  -moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+  box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
 }
 
 .column2:hover{
   background-color: #E8E8E8;
 }
-.nServicios{
-  margin-top: 25%; 
+
+
+.contText{
+  font-family: 'novaregular'; 
+  color: #fff; 
+  font-size: 1.1em;
+}
+
+.contText4{
+  font-family: 'novabold'; 
+  color: #fff; 
+  font-size: 1.4em;
+}
+
+.forja{
+  margin-top: 5%; 
+  opacity: 0.7; 
 }
 
 .cuenta{
@@ -566,20 +417,13 @@ font-family: "novabold" !important;
 text-align: center !important;
 }
 
+.nServicios{
+  margin-top: 25%; 
+}
+
 .idea{
   margin-top: 40%; 
 }
-
-.contTitle2{
-  font-family: 'novaregular'; 
-  color: #fff; 
-}
-
-.contTitle3{
-  font-family: 'novabold'; 
-  color: #333; 
-}
-
 
 .iconoServicio{
   z-index: 4; 
@@ -599,8 +443,7 @@ text-align: center !important;
 }
 
 
-
-
+/* Services EFEECT========================*/
 .grid {
   position: relative;
   max-width: 1000px;
@@ -647,7 +490,6 @@ text-align: center !important;
   width: 100%;
   height: 100%;
 }
-
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
 .grid figure figcaption > a {
@@ -699,7 +541,6 @@ figure.effect-julia figcaption {
 }
 
 figure.effect-julia h2 {
- 
   font-size: 153%;
   opacity: 0;
   font-family: 'novalight';
@@ -707,7 +548,6 @@ figure.effect-julia h2 {
 }
 
 figure.effect-julia p {
-
   display: inline-block;
   margin: 0 0 0.25em;
   padding: 0.4em 1em;
@@ -724,7 +564,6 @@ figure.effect-julia p {
 }
 
 .pasion{
-
   display: inline-block;
   margin: -26px 0px -40px 6% !important;
   padding: 0.4em 1em;
@@ -738,10 +577,7 @@ figure.effect-julia p {
   transition: opacity 0.35s, transform 0.35s;
   -webkit-transform: translate3d(-360px,0,0);
   transform: translate3d(-360px,0,0);
-
 }
-
-
 
 figure.effect-julia p:first-child {
   -webkit-transition-delay: 0.15s;
@@ -790,26 +626,241 @@ figure.effect-julia:hover p {
   transform: translate3d(0,0,0);
 }
 
-
 figure.effect-julia:hover h2 {
-  opacity: 0.8; 
-
-  transition: opacity .45s ease-in-out;
-   -moz-transition: opacity .45s ease-in-out;
-   -webkit-transition: opacity .45s ease-in-out; 
-   
+    opacity: 0.8; 
+    transition: opacity .45s ease-in-out;
+    -moz-transition: opacity .45s ease-in-out;
+    -webkit-transition: opacity .45s ease-in-out;   
 }
 
 figure.effect-julia:hover span {
-
   opacity: 0; 
- transition: opacity .55s ease-in-out;
- -moz-transition: opacity .55s ease-in-out;
- -webkit-transition: opacity .55s ease-in-out;
+  transition: opacity .55s ;
+  -moz-transition: opacity .55s ;
+  -webkit-transition: opacity .55s ; 
+}
+
+figure.effect-julia:hover span img {
+  opacity: 0; 
+  transition: opacity .55s ;
+  -moz-transition: opacity .55s ;
+  -webkit-transition: opacity .55s ;
+}
+
+
+
+
+
+/*--------------------------  END Section#3 Services -----------------------------*/
+
+
+
+
+
+/*--------------------------  BEGIN Section#4 Clients -----------------------------*/
+
+
+
+.columnC2{
+  height: 100%; 
+  z-index: 3; 
+}
+
+.columnC1{
+  height: 100%; 
+  background-color: #fff;
+  background-image: url("../img/ourClients.jpg");
+  background-size: auto 100%; 
+  background-position: 60%; 
+  z-index: 3; 
+  -webkit-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+  -moz-box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+  box-shadow: 26px -1px 80px -19px rgba(0,0,0,0.82);
+
+}
+
+.testimonios{ 
+  margin-top: 26%;
+}
+
+.row1{  
+  float: left;
+  width: 100%; 
+  text-align: center; 
+}
+
+.row2{
+  float: left;
+  width: 100%; 
+  text-align: center; 
+}
+
+.client{
+  float: left; 
+}
+
+.client img{
+  width: 150px;
+  height:150px;
+  opacity: 0.5; 
+}
+
+.testimonio{
+  font-size: 14px; 
+  color: #fff; 
+  opacity: 0.5; 
+
+}
+
+.contTitle4{
+  font-family: 'novabold'; 
+  color: #FFFFFF;
+  opacity: 0.8;   
+}
+
+.forja2{
+  margin-top: 5%; 
+  opacity: 0.8;
+  font-family: 'novasemibold';   
+}
+
+.lets{
+letter-spacing: 1px;
+font-family: "novabold" !important;
+text-align: center !important;
+color: #8C1C1C !important; 
+}
+
+
+/*--------------------------  END Section#4 Clients -----------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------  BEGIN Section#5 Contact  -----------------------------*/
+
+.columnCon{
+  height: 100%;
+  background-color: #fff;  
+  float: left; 
+  z-index: 4; 
+  background-image: url("../img/contact2.jpg");
+  background-size: auto 100%;
+  background-position: 92%;  
+
+  
+
+}
+
+.columnCon2{
+  height: 100%;
+  background-color: #fff; 
+  z-index: 4; 
+
+}
+
+.contactHero{
+  margin-top: 45%;
+}
+
+
+
+.columnSocial2{
+  height: 100%;
+  background-color: #DEDEDE; 
+  text-align: center; 
+  transition: background-color 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s; 
+}
+
+.columnSocial2:hover{
+  background-color: #fff;
+
+}
+
+
+.form{
+  margin-top: 45%; 
+}
+
+.fieldContact{
+  display: block;
+  font-family: 'novasemibold'; 
+  width: 100%;
+  height: 45px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #333;
+  background-color: rgba(255,255,255, 0.8);
+  padding: 10px;
+  border: solid 4px #CECECE;
+  transition: border 0.3s
+  background-image: none;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.textArea{
+  height: 120px !important; 
+}
+
+.fieldContact:focus,
+.fieldContact.focus{
+  border: solid 4px #797979; 
+}
+
+
+.boton{
+  width: 50%; 
+  height: 45px; 
+  font-family: 'novabold'; 
+  background-color: #D5D5D5;
+  color: #fff; 
+  border-radius: 0px !important; 
+  letter-spacing: 2px !important; 
+  font-size: 160% !important;  
+  border: solid 0px rgba(0, 0, 0, 0.2) !important;
+  transition: background-color 0.4s ease-in-out 0s, box-shadow 0.4s ease-in-out 0s; 
+}
+
+
+.boton:hover{
+  background-color: #D13638; 
+  color: #fff; 
+  opacity: 1; 
+}
+
+
+.socialIconBar{
+  height: 100%; 
+  width: 100%;
+  opacity: 0.9; 
+
+}
+
+.socialIconBar2{
+  height: 22px; 
+  width: 22px;
+  margin-top: 7%;
 
   
 }
 
+.socialIconBar2:hover{ 
+}
+
+
+/*--------------------------  END  Section#4 Contact  -----------------------------*/
 
 
 
@@ -823,11 +874,114 @@ figure.effect-julia:hover span {
 
 
 
+/*--------------------------  BEGIN Footer  -----------------------------*/
+
+.footerCan{  
+  background-color: #333;
+  border-top: solid 5px #D8D8DA; 
+  z-index: 50; 
+}
+
+.footerCont{
+margin-top: 3%; 
+}
+
+.footerCopy{
+  margin-top: 3%; 
+  font-size: 0.7em; 
+}
+
+.footerTip{
+  margin-top: 6%;
+}
+
+.footerSocial{
+  margin-top: 3%;  
+}
+
+.squareArrow{
+  height: 35px; 
+  width: 35px; 
+  background-color: #D8D8DA; 
+  padding: 5px; 
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+  -moz-box-shadow:    0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+  box-shadow:         0px 3px 7px 0px rgba(49, 50, 50, 0.43);
+}
+
+.arrow{
+  height: 25px; 
+  width: 25px; 
+  opacity: 0.5; 
+}
+
+.socialIcon2{
+  height: 22px; 
+  width: 22px;  
+}
+
+.socialIcon:hover{
+  opacity: 1; 
+}
+
+.inputFooter{
+  padding: 10px !important;
+  border: none !important;
+  border-bottom: solid 2px #666161 !important;
+  transition: border 0.3s !important;
+  background-color: transparent;
+  color: #fff !important;
+  font-family: 'novaregular';  
+}
+
+.inputFooter:focus{
+   border-bottom: solid 2px #969696  
+}
+
+.btnFooter{
+  display: inline-block;
+  
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  background-color: transparent;
+  border: 4px solid #FFF;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-family: 'novabold'; 
+  color: #fff; 
+  letter-spacing: 2px;
+  opacity: 0.5; 
+}
+
+.btnFooter:hover{
+opacity: 1; 
+}
+
+.nText{
+  font-family: 'novaregular'; 
+  color: #4D4D4D;
+  font-size: 1.45em;
+  margin-bottom: 2%; 
+  letter-spacing: 0.5px; 
+}
+
+/*--------------------------  END Footer  -----------------------------*/
 
 
 
 
 
+
+
+
+
+
+/*--------------------------  Media queries -----------------------------*/
 
 
 

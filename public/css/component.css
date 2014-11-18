@@ -311,6 +311,16 @@ nav a:focus {
 	padding: 10px 20px;
 }
 
+.letsW{
+	color: #BC2B2B !important;
+	font-family: "novabold" !important;
+}
+
+.letsW:hover,
+.letsW:focus{
+	color: #FFF !important;
+}
+
 .cl-effect-8 a::before,
 .cl-effect-8 a::after  {
 	position: absolute;
@@ -318,7 +328,7 @@ nav a:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border: 3px solid #354856;
+	border: 3px solid #BC2B2B;
 	content: '';
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
