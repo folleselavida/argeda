@@ -1,0 +1,82 @@
+extend layout/layout
+block content 
+
+    section#screen1Service
+
+      .full.serviceTitle.bounceLeft
+        h1 OUR SERVICES
+      .col-md-8.s1.fadeIn
+        .va-container#va-accordion
+
+          .va-wrapper
+            .va-slice.va-slice-1
+              h3.va-title DESIGN - BUILD
+              .va-content
+                img.center-block.mb-5(src="img/social3.svg")
+                p.mb-3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+                span.glyphicon.glyphicon-chevron-up.pull-right Back 
+
+            .va-slice.va-slice-2
+              h3.va-title CONSTRUCTION MANAGEMENT
+              .va-content
+                img.center-block.mb-5(src="img/social3.svg")
+                p.mb-3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+                span.glyphicon.glyphicon-chevron-up.pull-right Back 
+
+            .va-slice.va-slice-3
+              h3.va-title CONSULTING
+              .va-content
+                img.center-block.mb-5(src="img/social3.svg")
+                p.mb-3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+                span.glyphicon.glyphicon-chevron-up.pull-right Back 
+
+            .va-slice.va-slice-4
+              h3.va-title PROJECT MANAGEMENT
+              .va-content
+                img.center-block.mb-5(src="img/social3.svg")
+                p.mb-3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+                span.glyphicon.glyphicon-chevron-up.pull-right Back 
+
+
+
+
+    
+
+      .col-md-4.c2service
+        .center-block
+
+          h3 CONTACT US
+
+          p.contText3.mb-2 Interested in working together? Fill out the Project Inquiry form below with some information about your project.
+
+          form.mt-10(action="/landing", method="post")              
+            .form-group
+              input.fieldContact(type="text", name="user", placeholder="Name" required)             
+            .form-group
+              input.fieldContact(type="email" name="email" placeholder="E-mail" required)
+            .form-group    
+              textarea.fieldContact.textArea(name="message" placeholder="Project information" required)
+
+            .form-group.fadeIn
+              input.boton(type="submit", value="ENVIAR")
+       
+        
+       
+      
+          
+          
+
+
+
+    
+    
+
+    script(src="/js/classie.js")
+    script(src="/js/slide.js")
+    script(src="/js/jquery.easing.1.3.js")
+    script(src="/js/jquery.mousewheel.js")
+    script(src="/js/jquery.vaccordion.js")
+    script.
+      $(function() {
+        $('#va-accordion').vaccordion();
+      });

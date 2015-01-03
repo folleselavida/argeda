@@ -570,7 +570,6 @@ nav a:focus {
 	left: 50%;
 	color: transparent;
 	content: '•';
-	margin-top: 10px; 
 	text-shadow: 0 0 transparent;
 	font-size: 1em;
 	-webkit-transition: text-shadow 0.3s, color 0.3s;
@@ -584,13 +583,13 @@ nav a:focus {
 
 .cl-effect-13 a:hover::before,
 .cl-effect-13 a:focus::before {
-	color: #fff;
-	text-shadow: 10px 0 #fff, -10px 0 #fff;
+	color: #929292;
+	text-shadow: 10px 0 #929292, -10px 0 #929292;
 }
 
 .cl-effect-13 a:hover,
 .cl-effect-13 a:focus {
-	color: #fff;
+	color: #929292;
 }
 
 /* Effect 14: border switch */

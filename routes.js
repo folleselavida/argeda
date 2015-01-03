@@ -7,6 +7,17 @@ app.get('/', function(req, res) {
 	res.render('index'); 
 });
 
+app.get('/contact', function(req, res) {
+	res.render('contact'); 
+});
+
+app.get('/services', function(req, res) {
+	res.render('services'); 
+});
+
+
+
+
 app.post('/landing',function(req, res) {
 
 	if (req.body.user === undefined) {
@@ -37,21 +48,6 @@ app.post('/landing',function(req, res) {
 	});		
 
 });
-
-
-app.get('/portfolio', function(req, res) {
-	res.render('portfolio'); 
-});
-
-app.get('/contact', function(req, res) {
-	res.render('contact'); 
-});
-
-app.get('/sql-generator', function(req, res) {
-	res.render('sql-generator'); 
-});
-
-
 
 
 /*

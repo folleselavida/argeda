@@ -78,3 +78,81 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
+
+
+(function() {
+  
+  var bodyEl = document.body,
+    content = document.querySelector( '.content-wrap' ),
+    openbtn = document.getElementById( 'open-button' ),
+    closebtn = document.getElementById( 'close-button'),
+    closebtn2 = document.getElementById( 'close-button2'),
+    closebtn3 = document.getElementById( 'close-button3'),
+    closebtn4 = document.getElementById( 'close-button4'),
+    closebtn5 = document.getElementById( 'close-button5'),
+    closebtn6 = document.getElementById( 'close-button6'),
+    closebtn7 = document.getElementById( 'close-button7'),
+    isOpen = false;
+
+  function init() {
+    initEvents();
+  }
+
+  function initEvents() {
+    openbtn.addEventListener( 'click', toggleMenu );
+    if( closebtn) {
+      closebtn.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn2) {
+      closebtn2.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn3) {
+      closebtn3.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn4) {
+      closebtn4.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn5) {
+      closebtn5.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn6) {
+      closebtn6.addEventListener( 'click', toggleMenu );
+    }
+
+    if( closebtn7) {
+      closebtn7.addEventListener( 'click', toggleMenu );
+    }
+
+    
+
+    // close the menu element if the target it´s not the menu element or one of its descendants..
+    content.addEventListener( 'click', function(ev) {
+      var target = ev.target;
+      if( isOpen && target !== openbtn ) {
+        toggleMenu();
+      }
+    } );
+  }
+
+
+
+
+
+  function toggleMenu() {
+    if( isOpen ) {
+      classie.remove( bodyEl, 'show-menu' );
+    }
+    else {
+      classie.add( bodyEl, 'show-menu' );
+    }
+    isOpen = !isOpen;
+  }
+
+  init();
+
+})();

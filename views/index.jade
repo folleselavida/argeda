@@ -1,272 +1,103 @@
 extend layout/layout
 block content   
 
-    section#screen1
-      <!-- Begin video and image background-->
-      #video-container
-          video.widthFix#video(autoplay loop poster="img/intro1.png")
-            source(src="/video/1.mp4" type="video/mp4")
-            source(src="/video/1.ogv" type="video/ogg")
-            source(src="/video/1.webm" type="video/webm")
-      <!-- End video background-->
-         
+    
+
+    section#screen1     
+      .container.bounceLeft
+        .col-sm-8.col-sm-offset-2.introText.introArgeda.mt-35
+          p "Ayudamos a companias a reinventar su negocio, forjando relaciones más valiosas y rentables con sus clientes pasados, presentes y futuros a través de la diferenciación competitiva en la experiencia digital que brindan."
+          a.ourServices.center-block.mt-4(href="#") OUR SERVICES 
+
+    
+    section#screen2        
       .container
-        .col-xs-3.col-xs-offset-2.introCanned
-          img.logoIntro(src="img/logo.svg")
-        .col-xs-5.introText.introCanned
-          p Ayudamos a empresas a reinventar su negocio, forjando relaciones más valiosas y rentables con sus clientes pasados, presentes y futuros a través de la diferenciación competitiva en su
-          p(style="font-family: 'novasemibold';") EXPERIENCIA DIGITAL CON EL CLIENTE.
-          nav.cl-effect-2
-            a.smoothScroll(href="#screen2") 
-              span.porque(data-hover="POR QUE LO HACEMOS?")   POR QUÉ LO HACEMOS?
-
-    .menuCanned.full
-          ul.nav.navbar-nav.full#sticky
-              li
-                img.square.logo(src="img/logoChapa.svg")
-              li.linkMenu
-                nav.cl-effect-13
-                  a.smoothScroll(href="/#screen1") INICIO
-              li.linkMenu
-                a ♦   
-              li.linkMenu
-                nav.cl-effect-13
-                  a.smoothScroll(href="/#screen2") EL POR QUÉ
-               li.linkMenu
-                a ♦  
-              li.linkMenu
-                nav.cl-effect-13
-                  a.smoothScroll(href="/#screen3") SERVICIOS
-              li.linkMenu
-                a ♦   
-              li.linkMenu
-                nav.cl-effect-13
-                  a.smoothScroll(href="/#screen4") CLIENTES
-              li.linkMenu
-                a ♦
-              li.linkMenu
-                nav.cl-effect-13
-                  a.smoothScroll(href="/#screen5") CONTACTO
-    section#screen2
-
-      .imageService
-        .col-sm-10.col-sm-offset-1
-          h1.contTitle Enfócate menos en que bonito es tu producto y más en que tan valiosa es la experiencia que le brindas a tu cliente. 
-        
-        
-      .imageService2
-        .col-sm-12.why       
-
-          .col-sm-10.col-sm-offset-1
-            p.contText3 En un mundo donde los clientes son bombardeados con muchas opciones, se espera que las empresas provean experiencias atractivas y recompensen a sus clientes por su lealtad. Empresas que ignoran este hecho tenderán a no sobrevivir.
+        .col-sm-8.col-sm-offset-2
+          .col-sm-12.why.mb-10
+            .col-sm-12
+              button.col-sm-6.mt-2#one(onclick="text()") WHY WE DO IT? 
+              button.col-sm-6.mt-2.mb-2#two(onclick="olp()") WHAT WE DO?
+            p.col-sm-12.contText3.mt-5#textDyno En un mundo donde los clientes son bombardeados con muchas opciones, se espera que las empresas provean experiencias atractivas y recompensen a sus clientes por su lealtad. Empresas que ignoran este hecho tenderán a no sobrevivir.
 
 
-          .col-sm-10.col-sm-offset-1
-            h1.contTitle3 Por qué lo Hacemos? 
-            p.contText3 "Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .
-
-          .col-sm-10.col-sm-offset-1
-            h1.contTitle3 Qué Hacemos?
-            p.contText3 Diseñamos y desarrollamos estrategias personalizadas para implementar nuevas interacciones y tecnologías robustas en las diferentes etapas de la experiencia del cliente en tu empresa.
-
-          .col-sm-10.col-sm-offset-1
-            nav.cl-effect-2
-              a.smoothScroll(href="#screen3") 
-                span.porque(data-hover="Nuestros Servicios") Nuestros Servicios  
 
     section#screen3
-
-      .col-sm-4.column1
-        .col-sm-10.col-sm-offset-1.nServicios
-          h1.contTitle NUESTROS SERVICIOS
-        .col-sm-10.col-sm-offset-1
-            p.contText.forja Forjamos relaciones digitales entre empresas y clientes. 
-            p.contText4  LET'S WORK. 
-        .col-sm-10.col-sm-offset-1.idea
-          hr
-          h4.contTitle ALGUNA IDEA?
-          nav.cl-effect-20.cuenta.pull-left
-            a.smoothScroll(href="/#screen5")
-              span(data-hover="Cuéntanos!")  Cuéntanos!
-                
-      .grid.col-sm-4.column2
-          figure.effect-julia
-            .col-sm-12.iconoServicio
-              span.glyphicon.glyphicon-tower
-            img(src="img/service1.png")
-            figcaption.col-sm-12
-              h2 Estrategia y Análisis
-              div.col-sm-12
-                p.Sline Estrategia de marketing digital 
-                p.Sline Diagnóstico/Diseño de experiencias digitales con tu cliente
-                
-
-      .grid.col-sm-4.column2
-          figure.effect-julia
-            .col-sm-12.iconoServicio
-              span
-                img.center-block(src="img/service2icon.svg")
-            img(src="img/service2.png")
-            figcaption.col-sm-12
-              h2 Desarrollo
-              div.col-sm-10
-                p.Sline Tecnologías web (E-commerce)
-                p.Sline Apps Móviles 
-                p.Sline Sistemas de gestión y CRM 
-            
-
-      .grid.col-sm-4.column2
-          figure.effect-julia
-            .col-sm-12.iconoServicio
-              span
-                img.center-block(src="img/service3icon.svg")
-            img(src="img/service3.png")
-            figcaption.col-sm-12
-              h2 Social Media 
-              div.col-sm-10 
-                p.Sline Fidelización digital de tu cliente
-                p.Sline Construcción de  tu marca online
-              
-
-      .grid.col-sm-4.column2
-          figure.effect-julia
-            .col-sm-12.iconoServicio
-              span.glyphicon.glyphicon-heart
-            img(src="img/service4.png")
-            figcaption.col-sm-12
-              h2 Pasión
-              div.col-sm-10 
-                p.Sline.pasion AMAMOS 
-                p.Sline.pasion LO QUE
-                p.Sline.pasion HACEMOS! 
-
-    section#screen4
-        .col-sm-8.columnC1
-          .testimonios.col-sm-8.col-sm-offset-2
-    
-            .col-xs-12
-              h1.contTitle4 NUESTROS CLIENTES
-              .row1
-                section.client
-                  img.img-responsive(src="img/argeda.png")
-                section.client
-                  img.img-responsive(src="img/zyner.png")
-                section.client
-                  img.img-responsive(src="img/cepy.png")
-
-              .row2
-                section.client
-                  img.img-responsive(src="img/reno.png")
-                section.client
-                  img.img-responsive(src="img/apo.png")
-                section.client
-                  img.img-responsive(src="img/iura.png")
+      .container
+        .col-sm-8.col-sm-offset-2.mb-5
           
-           
-            
-           
 
-        .col-sm-4.columnC2
-          .col-sm-10.col-sm-offset-1.nServicios
-            h1.contTitle  Y LO QUE DICEN.... 
-          .col-sm-10.col-sm-offset-1
-            p.contText.forja2 Ellos han confiado en nosotros!! 
-          .col-sm-10.col-sm-offset-1.testimonio
-            br
-            p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            p.pull-right - Argeda Services & Solutions
+          .col-md-6.service.mt-5
+            a.socialIconBar(href="http://instagram.com/canned.head" target="_blank")
+              img.center-block(src="img/social3.svg")
+            hr 
+            a.serviceTitle DESIGN - BUILD
+            p.contText3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+            a MORE INFO
 
-          .col-sm-10.col-sm-offset-1.testimonio
-            br
-            p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
-            p.pull-right - Esperanza Falla, Directora Fundacion Cepytin
-          .col-sm-10.col-sm-offset-1
-            br
-            nav.cl-effect-8.lets
-              a.smoothScroll.letsW(href="/#screen5") LET'S WORK!
+          .col-md-6.service.mt-5
+            a.socialIconBar(href="http://instagram.com/canned.head" target="_blank")
+              img.center-block(src="img/social3.svg")
+            hr 
+            a.serviceTitle CONSTRUCTION MANAGEMENT
+            p.contText3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+            a MORE INFO
 
+          .col-md-6.service.mt-5
+            a.socialIconBar(href="http://instagram.com/canned.head" target="_blank")
+              img.center-block(src="img/social3.svg")
+            hr 
+            a.serviceTitle CONSULTING
+            p.contText3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+            a MORE INFO
+        
+          .col-md-6.service.mt-5
+            a.socialIconBar(href="http://instagram.com/canned.head" target="_blank")
+              img.center-block(src="img/social3.svg")
+            hr 
+            a.serviceTitle PROJECT MANAGEMENT
+            p.contText3 When you partner with RCD General Contractors for your building or renovation projects, you'll enjoy the benefits of our experience, exceptional service and impeccable track record of success withworld-class, high-profile brands like.
+            a MORE INFO
+        
+      
+
+    
+
+
+      
+        
+
+    script(src="/js/classie.js")
+    script(src="/js/slide.js")  
+    script.
+  
+      var text1 ="Ayudamos a companias a reinventar su negocio, forjando relaciones más valiosas y rentables con sus clientes pasados, presentes y futuros a través de la diferenciación competitiva en la experiencia digital que brindan.";
+      var text2 ="Ayudamos a companias a reinventar su negocio, forjando relaciones más valiosas y rentables con sus clientes pasados, presentes y futuros a través de la diferenciación competitiva en la experiencia digital que brindan22.";
+      
+
+
+      function text(){
+        $("#textDyno").html(text1);
+      }
+
+      function olp(){
+       $("#textDyno").html(text2);
+      }
+      
+
+
+     
+      
 
   
 
-    section#screen5
-      .col-sm-6.columnCon
-        .col-sm-10.col-sm-offset-1.contactHero
-          img.col-sm-6.col-sm-offset-3(src="img/letswork.svg")
-        .col-sm-8.col-sm-offset-2
-          br
-          br
-          p.contText Si tienes curiosidad y quieres escuchar mas de nuestros servicios, no dudes en hacer contacto. Las mejores relaciones se construyen hablando cara a cara. Y nosotros estamos dispuestos a hacerlo :) 
-
-
-      .col-sm-6.columnCon2
-        .col-sm-10.col-sm-offset-1.form      
-            form(action="/landing", method="post")              
-                .form-group
-                  input.fieldContact(type="text", name="user", placeholder="Nombre" required)             
-                .form-group
-                  input.fieldContact(type="email" name="email" placeholder="E-mail" required)
-                .form-group             
-                  textarea.fieldContact.textArea(name="message" placeholder="Mensaje" required)
     
-                .form-group 
-                  input.boton(type="submit", value="ENVIAR")
 
-    section#screen6
-
-      .col-sm-6.columnSocial2
-        a.socialIconBar(href="http://instagram.com/canned.head" target="_blank")
-          img.socialIconBar2(src="img/social3.svg")
-      .col-sm-6.columnSocial2
-        a.socialIconBar(href="#")
-          img.socialIconBar2(src="img/social2.svg")
-        
+      
+ 
+     
 
 
     
-    script.
-      $(document).ready(function(){
-       $("#sticky").sticky({topSpacing:0});
-
-      });
-        
-
-    script.
-      function sizeVideo(e){
-          if(typeof e=="undefined"){
-              e=getDocumentRatio()
-          }
-          if(e<9/16){
-              $("video").removeClass("heightFix").addClass("widthFix");
-              $("#image").removeClass("heightFix").addClass("widthFix")
-          } else {
-              $("video").removeClass("widthFix").addClass("heightFix");
-              $("#image").removeClass("widthFix").addClass("heightFix");
-          }
-      }
-
-      document.body.style.backgroundImage="none";
-
-      var wh=$(window).height();
-      var ww=$(window).width();
-      var ratio=wh/ww;sizeVideo(ratio);
-
-      window.onresize=function(){
-          var e=$(window).height();
-          var t=$(window).width();
-          var n=e/t;sizeVideo(n)
-      }  
-
-      var  mn = $(".main-nav");
-          mns = "main-nav-scrolled";
-          hdr = $('header').height();
-
-      $(window).scroll(function() {
-        if( $(this).scrollTop() > hdr ) {
-          mn.addClass(mns);
-        } else {
-          mn.removeClass(mns);
-        }
-      });  
 
     
 

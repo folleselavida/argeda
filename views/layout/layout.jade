@@ -6,73 +6,192 @@ html(lang="en")
     meta(property="og:title" content="")
     meta(property="og:image" content="https://s3.amazonaws.com/cannedhead.temp/cannedhead.png")
     meta(property="og:description" content="")
-    meta(property="og:url" content="http://www.cannedhead.com")
+    meta(property="og:url" content="http://www.argedasolutions.com")
     meta(content="" name="author")
     meta(content="width=device-width, initial-scale=1" name="viewport")   
    
-    title CannedHead
+    title Argeda Solutions
 
-    link(href="/img/16x16.png" rel="shortcut icon" type="image/png")  
+    link(href="/img/16x16.png" rel="shortcut icon" type="image/png")
+    <!-- CSS FILES-->
     link(href="/css/bootstrap.css", rel="stylesheet")
-    link(href="css/bootstrap.min.css", rel="stylesheet")
     link(href="/css/style.css", rel="stylesheet")
     link(href="/css/component.css", rel="stylesheet")
-    link(href="/css/set2.css", rel="stylesheet")
-
+    link(href="/css/animate.css", rel="stylesheet")
     <!-- jQuery & jQuery UI-->
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
-    script(src="/js/jquery.sticky.js")
-    <!-- Bootstrap JS -->
-    script(src="/js/bootstrap.min.js")
+    script(src="/js/jquery.min.js")  
+    script(src="/js/viewportchecker.js")
+    
     <!-- Other JS -->
     script(src="/js/scroll.js")
-    script(src="/js/jarallax-0.2.2.js")
     script(src="/js/smoothscroll.js")
     script(src="/js/modernizr.custom.js")
-     
+  
+    
 
-
-    script.
-      init = function() {
-        
-        var jarallax = new Jarallax(); 
-        jarallax.addAnimation('.apost',[{progress:'0%',top:'50%'},{progress: '100%',top: '0%'}]);                                    
-        
-      }
 
  
 
     
   body(onLoad='init()')
+    .menuMobile.full
+      img.logoMobile.ml-2(src="img/logoArgedaMobile.svg")
+      button.menu-button2.pull-right#open-button
+        img.center-block.img-responsive(src="img/menuMobile.svg")
+
+    .menu-wrap
+      nav.menu
+        img.center-block.mt-2(src="img/logoArgedaMobile2.svg")
+        .icon-list.col-x-6.col-xs-offset-1.mt-20
+          a.smoothScroll(href="/")#close-button2 HOME
+          a.smoothScroll(href="/services")#close-button3 SERVICES
+          a.smoothScroll(href="/")#close-button4 WORK
+          a.smoothScroll(href="/contact")#close-button5 CONTACT US
+          
+      button.close-button#close-button
+
+    .menuArgeda.full
+        div#centeredmenu
+          ul
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/") HOME
+   
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/services") SERVICES
+
+              li
+                img.square.logo(src="img/logoArgeda.svg")
+                 
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/#screen3") WORK
+                 
+              li.linkMenu
+                nav.cl-effect-13
+                  a.smoothScroll(href="/contact") CONTACT US
+           
+    .number.flipInY
+      p call us: 768 380 0613
+
     block content
 
+    section#screen4
+      .container
+        a.center-block.footTitle.mt-1(href="#")
+          p Let's Work 
+    
     footer.footer.footerCan
       .container
-        .col-sm-12
-          a(href="#").squareArrow.pull-right.scrollup
-            img.arrow(src="img/arrow.svg")
-        .col-sm-12.footerCont     
-          .col-sm-4.col-sm-offset-1
-            img.col-md-7.pull-right(src="img/logo.svg" style="opacity:0.5;")
-          .col-sm-6
-            .col-md-12
-              .col-md-12.footerSocial
-                
-            .col-md-12.footerTip
-              .col-md-12
-                p.nText RECIBE TIPS, RECURSOS Y NOTICIAS
-              .col-md-4
-                input.inputFooter(type="email" name="email" placeholder="Ingresa tu e-mail" required)
-              .col-md-4.col-md-offset-1
-                input.btnFooter(type="submit", value="SUSCRIBIRME") 
+        .col-sm-12.mt-1
+          div.footMenu
+            ul
+              li
+                a.smoothScroll(href="/") HOME
+              li
+                a.smoothScroll(href="/services") SERVICES   
+              li
+                a.smoothScroll(href="/#screen3") WORK
+              li
+                a.smoothScroll(href="/contact") CONTACT US
+        .col-sm-12.mt-5
+          .col-sm-4
+            a.col-sm-8.col-sm-offset-2(href="http://instagram.com/canned.head" target="_blank")
+                img.center-block.img-responsive(src="img/logoArgeda2.svg")
 
+          .col-sm-4.info
+            p.mt-3 786 380 0613
+            p GLORIA@ARGEDASOLUTIONS.COM
+            br
+            br
+            p 9140 COLLINS AVE AP D
+            p MIAMI. FL
+            
+          .col-sm-4
+            a.col-sm-8(href="" target="_blank")
+              img.center-block.img-responsive(src="img/aia.svg")
 
 
         .col-sm-12.footerCopy(style='text-align:center; color:#fff;')        
-          p(style='opacity:0.2;').copyright &copy; 2014 CannedHead Todos los derechos reservados.
-
-  
+          p(style='opacity:0.2;').copyright &copy; 2014 Argeda Solutions Todos los derechos reservados.
+          p(style='opacity:0.2;').copyright
+            a(href="http://cannedhead.com", target="_blank") link Powered by Canned Head
     
+ 
+  script.
+  
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58166746-1', 'auto');
+    ga('send', 'pageview');
+
+  script.
+    jQuery(document).ready(function() {
+      jQuery('.fadeInDown').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated fadeInDown',
+        offset: 100
+       });
+
+      jQuery('.fadeIn').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated fadeIn',
+        offset: 100
+       });
+
+      jQuery('.bounceLeft').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated bounceInLeft',
+        offset: 100
+       });
+
+      jQuery('.bounceRight').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated bounceInRight',
+        offset: 100
+       });
+
+      jQuery('.bounceUp').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated bounceInUp',
+        offset: 100
+       });
+
+      jQuery('.pulse').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated pulse',
+        offset: 100
+       });
+
+       jQuery('.zoomIn').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated zoomIn',
+        offset: 100
+       });
+
+       jQuery('.fadeInRight').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated FadeInRight',
+        offset: 100
+       });
+
+       jQuery('.fadeInLeft').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated FadeInLeft',
+        offset: 100
+       });
+
+       jQuery('.flipInY').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated flipInY',
+        offset: 100
+       });
+
+       jQuery('.shake').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated shake',
+        offset: 100
+       });
+
+       jQuery('.rotateIn').addClass("hidden2").viewportChecker({
+        classToAdd: 'visible animated rotateIn',
+        offset: 100
+       });
+    }); 
 
 
       
