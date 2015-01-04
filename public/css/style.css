@@ -898,6 +898,10 @@ padding-left: 8%;
 
 }
 
+.service img{
+  height: 80px; 
+}
+
 .service a{
 
   color: #B21E21; 
@@ -1394,6 +1398,11 @@ color: #8C1C1C !important;
 
 }
 
+.va-content img{
+  color: #fff; 
+ height: 150px;  
+}
+
 .va-content hr{
   color: #fff; 
   opacity: 0.5; 
@@ -1883,6 +1892,18 @@ margin-top: 5%;
 }
 
 
+
+/*-------------------------- 
+480PX
+ -----------------------------*/
+
+@media screen and (max-width :480px){
+
+.c1 h1{
+  margin-top: 10%; 
+}
+
+}
 
 
 /*-------------------------- 
